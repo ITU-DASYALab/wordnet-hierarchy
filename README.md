@@ -1,6 +1,16 @@
 # wordnet-hierarchy
 Scripts to get the WordNet hierarchy
 
+## Requirements
+
+Python 3.7 or higher
+
+nltk package
+
+```
+pip3 install nltk
+```
+
 ## py/makeWordNetDef.py
 
 This file is used to get the WordNet definitions from the 12988 features.
