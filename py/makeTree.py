@@ -23,13 +23,16 @@ class Node(object):
 
     def __str__(self):
         if self.is_leaf() and len(self.children) == 0:
+            # Actual Leaf
             p = '"name":"' + str(self.name) + '","id":' + str(self.data)
             #return p
         elif self.is_leaf() and len(self.children) > 0:
+            # Node that has images connected to it but is a parent node.
             #pp = '"' + str(self.name) + '":' + str(self.data) + '},{' 
             #p = '"{name}":[{children}]'.format(name=self.name, data=self.data, children=', '.join(map(str, self.children)))
             p = '"name":"{name}","id":{data},"children":[{children}]'.format(name=self.name, data=self.data, children=', '.join(map(str, self.children)))
         else:
+            # Part of hierarchy, no images attached
             p = '"name":"{name}","id":{data},"children":[{children}]'.format(name=self.name, data=self.data, children=', '.join(map(str, self.children)))
         return '{' + p + '}'
 
