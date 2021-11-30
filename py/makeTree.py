@@ -7,6 +7,14 @@ def breadcrumb_str(breadcrumb):
         path = 'root'
     return path
 
+def cut_off_str(breadcrumb):
+    bc = breadcrumb.copy()
+    bc.reverse()
+    path = ' <- '.join(list(map(lambda n: n.name, bc)))
+    if path == "":
+        path = 'root'
+    return path
+
 class Node(object):
     def __init__(self, name, parent):
         self.parent = parent # Single object
@@ -39,8 +47,10 @@ class Node(object):
         return self.parent != None and not self.is_leaf_in_tree()
     
     def disconnect_from_parent(self):
-        self.parent.children.remove(self)
+        parent = self.parent
+        parent.children.remove(self)
         self.parent = None
+        return parent
 
     def clone(self, parent=None):
         node = Node(self.name, parent)
@@ -171,8 +181,8 @@ class Node(object):
             n, depth = worklist.pop(0) #take first element 
             if depth == target_depth:
                 ret.append(n)
-                n.disconnect_from_parent()
-                cut_offs.append(('split', n, self))
+                p = n.disconnect_from_parent()
+                cut_offs.append(('split', n, p))
                 #ret.append(n.clone()) #create new trees 
             elif depth < target_depth:
                 for ch in n.children:
@@ -184,13 +194,11 @@ class Node(object):
         while len(worklist) > 0:
             n, depth = worklist.pop(0) #take first element 
             if depth == target_depth:
-                # use absorbe eller steal_and_append ?
                 cut_offs.append(('trim', n, n.parent)) # [ ab -> a ]
                 n.disconnect_from_parent()
             elif depth < target_depth:
                 for ch in n.children:
                     worklist.append((ch, depth+1))
-        #return array of corrections
                 
     def absorbe(self, other, cut_offs=[], removed_nodes=None):
         if other.data != -1:
@@ -457,7 +465,6 @@ class NodeHistory:
         self.history = {}
 
     def __len__(self):
-        print('len', len(self.history.items()))
         return len(self.history.items())
     
     def store(self, src, dst):
@@ -471,53 +478,71 @@ class NodeHistory:
         return bc
     
 
-def write_cut_offs_absorbe(elem, removed_nodes=None, *args, **kwargs):
+def write_cut_offs_absorbe(elem, f, removed_nodes=None, *args, **kwargs):
     _, ch, breadcrumb, orig_bcstr = elem
     assert breadcrumb_str(breadcrumb) == orig_bcstr
     assert removed_nodes is not None
     final_bc = removed_nodes.resolve(breadcrumb)
-    print("leaf: ", ch.name, "\n", breadcrumb_str(breadcrumb))
-    print(breadcrumb_str(final_bc))
-    final_parent_name = final_bc[len(final_bc)-1].name
-    if final_parent_name == ch.name:
-        final_parent_name = final_bc[len(final_bc)-2].name
-    print(ch.name, "->", final_parent_name, "\n") # last elem in array
-    return ch.name, final_parent_name
+    #print("leaf: ", ch.name, "\n", breadcrumb_str(breadcrumb))
+    #print(breadcrumb_str(final_bc))
+    final_parent = final_bc[len(final_bc)-1]
+    if final_parent.name == ch.name:
+        final_parent = final_bc[len(final_bc)-2]
+    final_root = final_parent.root()
+    if ch.data != -1:
+        f.write(f'{final_root.name}:{final_root.name}:{final_parent.name}:{ch.name}\n')
         
-def write_cut_offs_trim(elem, *args, **kwargs):
+def write_cut_offs_trim(elem, f, *args, **kwargs):
     _, ch, p = elem
-    # cut offs are still in breadcrumb
-    #print('trim', ch, p)
+    def visitor(n):
+        if n.data != -1:
+            f.write(f'{p.root().name}:{p.root().name}:{p.name}:{n.name}\n')
+    ch.visit(visitor)
+  
+def write_cut_offs_split(elem, f, *args, **kwargs):
+    _, ch, p = elem
+    print('split: ', ch.name, " -> ", cut_off_str(p.breadcrumb()))
     
-def write_cut_offs_split(elem, *args, **kwargs):
-    _, ch, p = elem
-    #print('split',ch, p)
+def write_cut_offs_verbose_absorbe(elem, f, removed_nodes=None, *args, **kwargs):
+    _, ch, breadcrumb, orig_bcstr = elem
+    assert breadcrumb_str(breadcrumb) == orig_bcstr
+    assert removed_nodes is not None
+    final_bc = removed_nodes.resolve(breadcrumb)
+    final_parent = final_bc[len(final_bc)-1]
+    if final_parent.name == ch.name:
+        final_parent = final_bc[len(final_bc)-2]
+    final_root = final_parent.root()
+    f.write(f'ABSORBE: {final_parent.breadcrumb_str()} ==> {ch.name} | data: {ch.data}\n')
 
+def write_cut_offs_verbose_trim(elem, f, *args, **kwargs):
+    _, ch, p = elem
+    def visitor(n):
+        p_bc_str = p.breadcrumb_str()
+        cutoff = n.breadcrumb_str()
+        f.write(f'TRIM: {p_bc_str} ==> {cutoff} | data: {n.data}\n')
+    ch.visit(visitor)
+
+## Format: TagsetName:HierarchyName:ParrentTagName:ChildTag:ChildTag:ChildTag:(...)
 write_cut_offs_types = {
     'absorbe': write_cut_offs_absorbe,
     'trim': write_cut_offs_trim,
-    'split': write_cut_offs_split
+    #'split': write_cut_offs_split,
 }
 
-def write_cut_offs(cut_offs, *args, **kwargs):
-    for elem in cut_offs:
-        elem_type = elem[0]
-        helper = write_cut_offs_types.get(elem_type)
-        assert helper
-        helper(elem, *args, **kwargs)
+write_cut_offs_verbose_types = {
+    'absorbe': write_cut_offs_verbose_absorbe,
+    'trim': write_cut_offs_verbose_trim,
+    #'split': write_cut_offs_verbose_split,
+}
 
-"""
-def write_cut_offs_to_file(cut_offs, filename, *args, **kwargs):
+def write_cut_offs(cut_offs, filename, handlers=write_cut_offs_types, *args, **kwargs):
     with open(filename, 'w+') as f:
         for elem in cut_offs:
             elem_type = elem[0]
-            helper = write_cut_offs_types.get(elem_type)
-            assert helper
-            ch_name, parent_name = helper(elem, *args, **kwargs)
-            cut_off_line = ch_name + " -> " + parent_name + "\n"
-            f.write(cut_off_line)
+            handler = handlers.get(elem_type)
+            if handler:
+                handler(elem, f, *args, **kwargs)
         f.close()
- """           
 
 def combine_dicts(dict1, dict2):
     dict_list = [dict1, dict2]            
@@ -583,19 +608,12 @@ print("cut_offs before split from top: ", len(cut_offs))
 subtree_list1 = root.split(1, cut_offs=cut_offs)
 if removed_nodes is not None:
     print("cut_offs: ", len(cut_offs), " removed_nodes: ", len(removed_nodes))
+for subtree in subtree_list1:
+    subtree.trim(7, cut_offs=cut_offs)
 
-write_cut_offs(cut_offs, removed_nodes=removed_nodes)
+print("cut_offs: ", len(cut_offs) )
 
-'''
-for k, v in removed_nodes.items():
-    bc, name = v
-    if name == "warplane": # "potato"
-        print(k)
-'''
-
-#print("\nfair?", len(subtree_list1))
-#for tree in subtree_list1:
-    #print(tree.name, "\t", tree.breadcrumb_str())
-    #print(tree)
-    #tree.printTree()
-    
+#default
+write_cut_offs(cut_offs, 'cut_off.txt', removed_nodes=removed_nodes)
+#debug
+write_cut_offs(cut_offs, 'cut_off_verbose.txt', handlers=write_cut_offs_verbose_types, removed_nodes=removed_nodes)
