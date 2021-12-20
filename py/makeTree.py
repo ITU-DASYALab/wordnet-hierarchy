@@ -1,13 +1,7 @@
 import json
 import argparse
 from os import posix_fallocate
-
-# return a string representation of path in tree
-def breadcrumb_str(breadcrumb):
-    path = ' -> '.join(list(map(lambda n: n.name, breadcrumb)))
-    if path == "":
-        path = 'root'
-    return path
+from node import breadcrumb_str
 
 # return a string representation of cut offs. Used for cutting tree from top
 def cut_off_str(breadcrumb):
