@@ -2,15 +2,9 @@ import json
 import argparse
 from os import posix_fallocate
 from node import Node,NodeHistory,breadcrumb_str
+from writeCutOffs import write_cut_offs, write_cut_offs_verbose
 
-# return a string representation of cut offs. Used for cutting tree from top
-def cut_off_str(breadcrumb):
-    bc = breadcrumb.copy()
-    bc.reverse()
-    path = ' <- '.join(list(map(lambda n: n.name, bc)))
-    if path == "":
-        path = 'root'
-    return path
+metadata = {}
 
 HELP_HIEARCHY = 'WordNet Hiearchy File'
 HELP_ID_F = 'Distinct feature id file'
@@ -59,17 +53,19 @@ def from_json_to_tree(tree, parent=None) :
     return node
 
 # loads data from file
-def load_data_2():
-    #with open('jsTree/test_twochild.json', 'r') as f:
-    with open('jsTree/tree_t5c0.json', 'r') as f:
+def load_data_2(filename):
+    global metadata
+    metadata['input']={'filename':filename}
+    with open(filename, 'r') as f:
     #with open('new_org.json', 'r') as f:
         tree = json.load(f)
         #print( from_json_to_tree(tree) )
     return from_json_to_tree(tree)
 
-root = load_data_2()
-
-#root.print_tree()
+def write_metadata_to_json():
+    with open('metadata.json', 'w+') as f:
+        json.dump(metadata, f)
+        f.close()
 
 # merge all grandchildren at once. If all gr_ch doesn't fit in the budget we don't merge.
 # budget is the max number of children a node can have.
@@ -124,7 +120,7 @@ def collapse_all_single_children(n):
         assert i < 100 #safety feature to avoid eternal loop is non solvable due to a bug..
 
 # split tree from top
-def split_automated(tree, minNodes=50, maxNodes=500, subtrees=[]):
+def split_automated(tree, minNodes=50, maxNodes=500, cut_offs=[], subtrees=[]):
     rerun = True
     while rerun:
         rerun = False
@@ -211,92 +207,6 @@ def write_tsv(combined_dict, filename):
             f.write(str(k)+"\t"+values+"\n")
         f.close()
 
-# write cut offs to file
-## Format: TagsetName:HierarchyName:ParrentTagName:ChildTag:ChildTag:ChildTag:(...)
-def write_cut_offs_absorbe(elem, f, removed_nodes=None, *args, **kwargs):
-    _, ch, breadcrumb, orig_bcstr = elem
-    assert breadcrumb_str(breadcrumb) == orig_bcstr
-    assert removed_nodes is not None
-    final_bc = removed_nodes.resolve(breadcrumb)
-    #print("leaf: ", ch.name, "\n", breadcrumb_str(breadcrumb))
-    #print(breadcrumb_str(final_bc))
-    final_parent = final_bc[len(final_bc)-1]
-    if final_parent.name == ch.name:
-        final_parent = final_bc[len(final_bc)-2]
-    final_root = final_parent.root()
-    if ch.data != -1:
-        f.write(f'{final_root.name}:{final_root.name}:{final_parent.name}:{ch.name}\n')
-
-# write cut offs to file
-## Format: TagsetName:HierarchyName:ParrentTagName:ChildTag:ChildTag:ChildTag:(...)
-def write_cut_offs_trim(elem, f, *args, **kwargs):
-    _, ch, p = elem
-    def visitor(n):
-        if n.data != -1:
-            f.write(f'{p.root().name}:{p.root().name}:{p.name}:{n.name}\n')
-    ch.visit(visitor)
-
-# write cut offs to file
-## Format: TagsetName:HierarchyName:ParrentTagName:ChildTag:ChildTag:ChildTag:(...)    
-#def write_cut_offs_merge():
-
-# write cut offs to file
-## Format: TagsetName:HierarchyName:ParrentTagName:ChildTag:ChildTag:ChildTag:(...)
-def write_cut_offs_split(elem, f, *args, **kwargs):
-    _, ch, p = elem
-    print('split: ', ch.name, " -> ", cut_off_str(p.breadcrumb()))
-    
-# write cut offs to file, verbose for debugging
-def write_cut_offs_verbose_absorbe(elem, f, removed_nodes=None, *args, **kwargs):
-    _, ch, breadcrumb, orig_bcstr = elem
-    assert breadcrumb_str(breadcrumb) == orig_bcstr
-    assert removed_nodes is not None
-    final_bc = removed_nodes.resolve(breadcrumb)
-    final_parent = final_bc[len(final_bc)-1]
-    if final_parent.name == ch.name:
-        final_parent = final_bc[len(final_bc)-2]
-    final_root = final_parent.root()
-    f.write(f'ABSORBE: {final_parent.breadcrumb_str()} : <- {ch.name} | data: {ch.data}\n')
-
-# write cut offs to file, verbose for debugging
-def write_cut_offs_verbose_trim(elem, f, *args, **kwargs):
-    _, ch, p = elem
-    def visitor(n):
-        p_bc_str = p.breadcrumb_str()
-        cutoff = n.breadcrumb_str()
-        f.write(f'TRIM: {p_bc_str} : <- {cutoff} | data: {n.data}\n')
-    ch.visit(visitor)
-
-def write_cut_offs_verbose_merge(elem, f, *args, **kwargs):
-    _, b, b_bc, a_bc = elem
-    f.write(f'MERGE: \n{breadcrumb_str(a_bc)} : <- \n{breadcrumb_str(b_bc)}\n')
-    
-# handler type
-write_cut_offs_types = {
-    'absorbe': write_cut_offs_absorbe,
-    'trim': write_cut_offs_trim,
-    #'split': write_cut_offs_split,
-    #'merge': write_cut_offs_merge,
-}
-
-# handler type verbose
-write_cut_offs_verbose_types = {
-    'absorbe': write_cut_offs_verbose_absorbe,
-    'trim': write_cut_offs_verbose_trim,
-    #'split': write_cut_offs_verbose_split,
-    'merge': write_cut_offs_verbose_merge,
-}
-
-# initializes writing of cut offs to file
-def write_cut_offs(cut_offs, filename, handlers=write_cut_offs_types, *args, **kwargs):
-    with open(filename, 'w+') as f:
-        for elem in cut_offs:
-            elem_type = elem[0]
-            handler = handlers.get(elem_type)
-            if handler:
-                handler(elem, f, *args, **kwargs)
-        f.close()
-
 # combines two dictionaries to one
 def combine_dicts(dict1, dict2):
     dict_list = [dict1, dict2]            
@@ -337,7 +247,6 @@ def print_trees(list_of_trees):
         else:
             print('{}\t size: {}\t height: {}'.format(elem.name, elem.count_BFS(lambda n: True), elem.count_height()))
 
-
 # print statistics, and write tsvfile to be further processed by gnuplot
 def print_stats(tree, tsvfile):
     print("total nodes:\t\t",tree.count_BFS(lambda n: True))
@@ -350,16 +259,14 @@ def print_stats(tree, tsvfile):
 
     print("(level: #child)")
     print(tree.count_widths())
-    print("(level: avg child)")
-    print(tree.avg_child())
+    #print("(level: avg child)")
+    #print(tree.avg_child())
     
     print("\nDUPLICATES")
     dups = tree.find_duplicates_by_name()
-    print(f"different dups: {len(dups)}\tsum of dups: {sum_dups(dups)}")
-    print_top10_dup(dups)
+    print(f"different dups by name: {len(dups)}\tsum of dups: {sum_dups(dups)}")
     dups_data = tree.find_duplicates_by_data()
-    print(f"different dups: {len(dups_data)}\tsum of dups: {sum_dups(dups_data)}")
-    #print_top10_dup(dups_data)
+    print(f"different dups by data: {len(dups_data)}\tsum of dups: {sum_dups(dups_data)}")
     
     object_tag_relation = read_object_tag_relation("/home/ek/Documents/Thesis/SQL/tag_count.csv")
     no_present_tag , missing_tagging, total, tag_dict = tree.count_taggings(object_tag_relation)
@@ -372,64 +279,73 @@ def print_stats(tree, tsvfile):
     
     comb_dict = combine_dicts(tree.count_widths(), tag_dict)
     write_tsv(comb_dict, tsvfile)
+
+def main():
+    root = load_data_2('jsTree/tree_t5c0.json')
+    cut_offs=[]
+
+    print("-- UNCOMPRESSED --")
+    print_stats(root, 'stats_initial.tsv')
+    #root.print_tree()
+
+    #print("-- MERGE --")
+    #cnt_merged = merge_identical_subtrees(root, cut_offs=cut_offs)
+    #print("Merged count: ",cnt_merged)
+    #print_stats(root, 'stats_after_merge.tsv')
+
+    collapse_all_single_children(root)
+    print("-- COMPRESS SINGULAR CHAIN--")
+    print_stats(root, 'stats_remove_singular_chain.tsv')
+    #root.print_tree()
+
+    removed_nodes= NodeHistory()
+    root.visit(collapse_nodes, budget=20, cut_offs=cut_offs, removed_nodes=removed_nodes)
+    print("-- COMPRESS COLLAPSE --")
+    print_stats(root, 'stats_after_collapse.tsv')
+    #root.print_tree()
+
+    #TODO bygge script der tager data fra json og kører plots
+    # jq -r .input.filename metadata.json
+
+    #write_json(root, 'new_org_optimized_max20.json')
+    #write_graph(root, 'graph.dot', 2)  
+            
+    subtree_list = split_automated(root, minNodes=100, maxNodes=500, cut_offs=cut_offs, subtrees=[])
+
+    i = 0
+    #for subtree in subtree_list:
+    #    i += 1
+    #    print("-- MERGED --", subtree.name)
+    #    cnt_merged = merge_identical_subtrees(subtree, cut_offs=cut_offs, also_leafs=True)
+    #    print("Merged count: ",cnt_merged)
+    #    print_stats(subtree, f'stats_after_merge_sub{i}.tsv')
+    #print_trees(subtree_list)
         
-#foo = root.clone().lookup("animal")
-#root.lookup("animal")
-#print_stats(foo)
-#print(' -> '.join(list(map(lambda n: n.name, foo.breadcrumb()))), "\n")
-cut_offs=[]
-
-print("-- UNCOMPRESSED --")
-print_stats(root, 'stats_initial.tsv')
-#root.print_tree()
-
-print("-- MERGE --")
-cnt_merged = merge_identical_subtrees(root, cut_offs=cut_offs)
-print("Merged count: ",cnt_merged)
-print_stats(root, 'stats_after_merge.tsv')
-
-collapse_all_single_children(root)
-print("-- COMPRESS SINGULAR CHAIN--")
-print_stats(root, 'stats_remove_singular_chain.tsv')
-#root.print_tree()
-
-removed_nodes= NodeHistory()
-root.visit(collapse_nodes, budget=20, cut_offs=cut_offs, removed_nodes=removed_nodes)
-print("-- COMPRESS COLLAPSE --")
-print_stats(root, 'stats_after_collapse.tsv')
-#root.print_tree()
-
-cnt_merged = merge_identical_subtrees(root, cut_offs=cut_offs, also_leafs=True)
-print("Merged count: ",cnt_merged)
-print_stats(root, 'stats_after_merge_leafs.tsv')
-
-
-#write_json(root, 'new_org_optimized_max20.json')
-#write_graph(root, 'graph.dot', 2)  
+        #*subtree.trim(5, cut_offs=cut_offs)
         
-subtree_list = split_automated(root, minNodes=100, maxNodes=500, subtrees=[])
-#print_trees(subtree_list)
-    
-    #*subtree.trim(5, cut_offs=cut_offs)
-    
-    #subtree.lookup("vehicle")
-    #subtree.lookup("wheeled_vehicle")
-    #subtree.lookup("truck")
-    
-#print("-- AFTER COLLAPSE --")
-#print("cut_offs: ", len(cut_offs), "\t removed_nodes: ", len(removed_nodes))
-    
-#if removed_nodes is not None:
-#    print("-- AFTER SPLIT --")
-#    print("cut_offs: ", len(cut_offs))
+        #subtree.lookup("vehicle")
+        #subtree.lookup("wheeled_vehicle")
+        #subtree.lookup("truck")
+        
+    #print("-- AFTER COLLAPSE --")
+    #print("cut_offs: ", len(cut_offs), "\t removed_nodes: ", len(removed_nodes))
+        
+    #if removed_nodes is not None:
+    #    print("-- AFTER SPLIT --")
+    #    print("cut_offs: ", len(cut_offs))
 
-#print("-- AFTER TRIM --")
-#print("cut_offs: ", len(cut_offs) )
+    #print("-- AFTER TRIM --")
+    #print("cut_offs: ", len(cut_offs) )
 
-#print("\n--", subtree_list[9].name, "--")
-#subtree_list[9].print_tree()
+    #print("\n--", subtree_list[9].name, "--")
+    #subtree_list[9].print_tree()
 
-#default
-write_cut_offs(cut_offs, 'cut_off.txt', removed_nodes=removed_nodes)
-#debug
-write_cut_offs(cut_offs, 'cut_off_verbose.txt', handlers=write_cut_offs_verbose_types, removed_nodes=removed_nodes)
+    #default
+    write_cut_offs(cut_offs, 'cut_off.txt', removed_nodes=removed_nodes)
+    #debug
+    write_cut_offs_verbose(cut_offs, 'cut_off_verbose.txt', removed_nodes=removed_nodes)
+
+    write_metadata_to_json()
+
+if __name__ == '__main__':
+    main()
