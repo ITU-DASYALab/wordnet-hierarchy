@@ -133,7 +133,7 @@ class Node(object):
     
     def find_duplicates(self, selector):
         dups = self.nodes_group_by(selector)
-        return {k: v for k, v in dups.items() if len(v) >= 2} #filtering dict
+        return {k: v for k, v in dups.items() if len(v) > 1} #filtering dict
 
     def find_duplicates_by_name(self):
         return self.find_duplicates(lambda n: n.name)
@@ -141,6 +141,19 @@ class Node(object):
     def find_duplicates_by_data(self):
         return self.find_duplicates(lambda n: n.data)
 
+    def find_duplicates_by_name_with_inconsistent_data(self):
+        dups = {}
+        dups_by_name = self.find_duplicates_by_name()
+        for name, entries in dups_by_name.items():
+            if len(entries) == 1:
+                continue
+            values = {}
+            for n in entries:
+                values[n.data] = values.get(n.data, 0) + 1
+            if len(values) > 1: #n.data is inconsistent
+                dups[name] = entries
+        return dups
+    
     # check if subtrees in two trees are identical
     def compare_tree(self, other):
         worklist = [ (self, other) ]
@@ -239,7 +252,7 @@ class Node(object):
                 
     # goes n levels down in the org-tree and returns a list of sub-trees
     # cut_from_top
-    def split(self, target_depth, cut_offs=[]):
+    def split(self, target_depth, cut_offs):
         worklist = [ (self, 0) ]
         ret = []
         while len(worklist) > 0:
@@ -256,7 +269,7 @@ class Node(object):
     
     # goes n levels down and cuts off all nodes below this level
     # cut_from_bottom
-    def trim(self, target_depth, cut_offs=[]):
+    def trim(self, target_depth, cut_offs):
         worklist = [ (self, 0) ]
         while len(worklist) > 0:
             n, depth = worklist.pop(0) #take first element 
@@ -275,7 +288,7 @@ class Node(object):
         return None
 
     # parent node absorbe collapsed node
-    def absorb(self, other, cut_offs=[], removed_nodes=None):
+    def absorb(self, other, cut_offs, removed_nodes):
         #print(f'  --absorbe-- self: {self.name} other: {other.name}')
         if other.data != -1: # do a check if there is images attached
             cut_offs.append(('absorbe', other, other.breadcrumb(), other.breadcrumb_str()))
@@ -285,7 +298,7 @@ class Node(object):
         other.children = []
 
     # removes childs from current position in tree and append to new parent
-    def steal_and_append_child(self, ch, cut_offs=[], removed_nodes=None):
+    def steal_and_append_child(self, ch, cut_offs, removed_nodes):
         assert ch.parent is not None
         #print(f'  --steal & append-- self: {self.name} ch: {ch.name}')
         ch.parent.children.remove(ch)
@@ -301,7 +314,7 @@ class Node(object):
             self.children.append(ch)
 
     # initializes the collapse of a node
-    def collapse(self, cut_offs=[], removed_nodes=None): 
+    def collapse(self, cut_offs, removed_nodes): 
         #self.root().print_tree()
         #print(f'--collapse {my_cnt}-- self: {self.name} ')
         assert self.is_intermediate_node()
@@ -324,7 +337,7 @@ class Node(object):
         self.parent = None #ready for garbage collection
         self.children = []
         
-    # not done yet ..
+    # not scope of this project
     def commonWords(self, words=[]):
         # input: list of common words
         # exclude advance search terms
@@ -346,7 +359,7 @@ class Node(object):
             # part of hierachy, no images attached
             p = '"name":"{name}","id":{data},"children":[{children}]'.format(name=self.name, data=self.data, children=', '.join(map(str, self.children)))
         return '{' + p + '}'
-
+        
     # find a certain tag in the tree. Returns the node and print some statistics
     def lookup(self, name):
         worklist = [self]
