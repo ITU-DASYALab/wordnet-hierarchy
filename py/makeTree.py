@@ -225,36 +225,51 @@ def print_stats(tree, description, tsvfile, verbose=False):
     vprint("total nodes:\t\t",total_nodes)
     
     total_leafs = tree.count_leafs()
-    vprint("leafs:\t\t\t", total_leafs)
     stats['total_leafs'] = total_leafs
+    vprint("leafs:\t\t\t", total_leafs)
     
-    #TODO gør som Asbjørn resten af metoden....
-    print("intermediate:\t\t", tree.count_intermediate())
-    print("part of singular chain:\t", tree.count_collapsable_singular_chain())
-    print("tree height:\t\t", tree.count_height())
-    print("avg leaf to root:\t", tree.avg_leaf_to_root())
-    print()
+    intermediate_nodes = tree.count_intermediate()
+    stats['intermediate_nodes'] = intermediate_nodes
+    vprint("intermediate:\t\t", intermediate_nodes)
+    
+    singular_chain_nodes = tree.count_collapsable_singular_chain()
+    stats['singular_chain_nodes'] = singular_chain_nodes
+    vprint("part of singular chain:\t", singular_chain_nodes)
+    
+    tree_height = tree.count_height()
+    stats['tree_height'] = tree_height
+    vprint("tree height:\t\t", tree_height)
+    
+    avg_leaf_to_root = tree.avg_leaf_to_root()
+    stats[avg_leaf_to_root] = avg_leaf_to_root
+    vprint("avg leaf to root:\t", tree.avg_leaf_to_root())
 
     tree_widths = tree.count_widths()
-    print("(level: #child)\n", tree_widths)
     stats['tree_widths'] = tree_widths
+    vprint("(level: #child)\n", tree_widths)
     #print("(level: avg child)")
     #print(tree.avg_child())
     
-    print("\nDUPLICATES")
+    vprint("\nDUPLICATES")
     dups = tree.find_duplicates_by_name()
-    print(f"different dups by name:\t\t{len(dups)}\tsum of dups: {sum_dups(dups)}")
+    stats['dups_name']=dups
+    vprint(f"different dups by name:\t\t{len(dups)}\tsum of dups: {sum_dups(dups)}")
     dups_data = tree.find_duplicates_by_data()
-    print(f"different dups by data:\t\t{len(dups_data)}\tsum of dups: {sum_dups(dups_data)}")
+    stats['dups_data']=dups_data
+    vprint(f"different dups by data:\t\t{len(dups_data)}\tsum of dups: {sum_dups(dups_data)}")
     dups_name_data = tree.find_duplicates_by_name_with_inconsistent_data()
-    print(f"different dups by data&name:\t{len(dups_name_data)}\tsum of dups: {sum_dups(dups_name_data)}\n")
+    stats['dups_name_inconsisten_data']=dups_name_data
+    vprint(f"different dups by data&name:\t{len(dups_name_data)}\tsum of dups: {sum_dups(dups_name_data)}\n")
     
     object_tag_relation = read_object_tag_relation("/home/ek/Documents/Thesis/SQL/tag_count.csv")
-    no_present_tag , missing_tagging, total, tag_dict = tree.count_taggings(object_tag_relation)
-    print(f"total taggings:\t{total}")
-    print(f"tag '-1':\t{no_present_tag}\t tagging not in DB:\t{missing_tagging}\n")
+    no_present_tag , missing_tagging, total_taggings, tag_dict = tree.count_taggings(object_tag_relation)
+    stats['total_taggings']=total_taggings
+    vprint(f"total taggings:\t{total_taggings}")
+    stats['not_present_tags']=no_present_tag
+    stats['missing_taggings']=missing_tagging
+    vprint(f"tag '-1':\t{no_present_tag}\t tagging not in DB:\t{missing_tagging}\n")
     
-    comb_dict = combine_dicts(tree.count_widths(), tag_dict)
+    comb_dict = combine_dicts(tree_widths, tag_dict)
     write_tsv(comb_dict, tsvfile)
     
     return stats
