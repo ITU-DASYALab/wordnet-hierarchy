@@ -29,7 +29,7 @@ class Node(object):
         self.parent = parent # Single object
         self.children = []  # Array of objects
         self.name = name
-        self.data = -1 # images link to this tag_id
+        self.data = -1 # from distinct_features_t25.json
 
     def add_node(self, name):
         for child in self.children:
@@ -43,7 +43,6 @@ class Node(object):
         return len(self.children)
 
     def is_tagged(self): #intermediate node, images link to tag
-        #consider renaming: is_present_img_tag()
         return not self.data == -1
 
     def is_leaf_in_tree(self): #definition of leaf: node that has no children
@@ -108,6 +107,21 @@ class Node(object):
     
     def count_collapsable_singular_chain(self):
         return self.count_BFS(lambda n: n.should_collapse_singular_chain())
+    
+    def count_taggings(self, taggings):
+        worklist = [ self ]
+        missing_tagging = total = 0
+        while len(worklist) > 0:
+            n = worklist.pop(0)
+            if n.name not in taggings:
+                #continue
+                missing_tagging += 1
+            else: 
+                #print("tag: ", n.name, "\t#taggings: ",object_tag_relation[n.name])
+                total += taggings[n.name]
+            for ch in n.children:
+                worklist.append(ch)
+        return missing_tagging, total
     
     # traverses the tree and apply visitor function
     def visit(self, visitor, *args, **kwargs):
@@ -198,23 +212,41 @@ class Node(object):
         return ret
     
     # count number of taggings at all levels in the tree. Returns a dictionary
-    def count_taggings(self, object_tag_relation):
+    # obs ! node.id is not the same as tag_id in
+    # def count_taggings_id(self, object_tag_relation):
+    #     worklist = [ (self, 0) ]
+    #     no_present_tag = missing_tagging = total = 0
+    #     tags = {}
+    #     while len(worklist) > 0:
+    #         n, depth = worklist.pop(0)
+    #         if n.data == -1:
+    #             no_present_tag += 1
+    #         elif n.data not in object_tag_relation:
+    #             missing_tagging += 1
+    #         else: 
+    #             #print("tag: ", n.data, "\t#taggings: ",object_tag_relation[n.data])
+    #             total += object_tag_relation[n.data]
+    #             tags[depth] = tags.get(depth, 0) + object_tag_relation[n.data]
+    #         for ch in n.children:
+    #             worklist.append((ch, depth+1))
+    #     return no_present_tag, missing_tagging, total, tags
+    
+    # count number of taggings based on name of tag
+    def count_taggings_name(self, object_tag_relation):
         worklist = [ (self, 0) ]
-        no_present_tag = missing_tagging = total = 0
+        missing_tagging = total = 0
         tags = {}
         while len(worklist) > 0:
             n, depth = worklist.pop(0)
-            if n.data == -1:
-                no_present_tag += 1
-            elif n.data not in object_tag_relation:
+            if n.name not in object_tag_relation:
                 missing_tagging += 1
             else: 
-                #print("tag: ", n.data, "\t#taggings: ",object_tag_relation[n.data])
-                total += object_tag_relation[n.data]
-                tags[depth] = tags.get(depth, 0) + object_tag_relation[n.data]
+                #print("tag: ", n.name, "\t#taggings: ",object_tag_relation[n.name])
+                total += object_tag_relation[n.name]
+                tags[depth] = tags.get(depth, 0) + object_tag_relation[n.name]
             for ch in n.children:
                 worklist.append((ch, depth+1))
-        return no_present_tag, missing_tagging, total, tags
+        return missing_tagging, total, tags
     
     # count the average height from leaf to root
     def avg_leaf_to_root(self):
@@ -290,7 +322,7 @@ class Node(object):
     # parent node absorbe collapsed node
     def absorb(self, other, cut_offs, removed_nodes):
         #print(f'  --absorbe-- self: {self.name} other: {other.name}')
-        if other.data != -1: # do a check if there is images attached
+        if other.data != -1: # do a check if there data is in distict features
             cut_offs.append(('absorbe', other, other.breadcrumb(), other.breadcrumb_str()))
         for ch in other.children.copy(): # other.children changes
             self.steal_and_append_child(ch, cut_offs=cut_offs, removed_nodes=removed_nodes)
@@ -348,16 +380,17 @@ class Node(object):
     def __str__(self):
         if self.is_tagged() and len(self.children) == 0:
             #actual leaf
-            p = '"name":"' + str(self.name) + '","id":' + str(self.data)
+            #p = '"name":"' + str(self.name) + '","id":' + str(self.data)
+            p = '"name":"' + str(self.name) + '"'
             #return p
         elif self.is_tagged() and len(self.children) > 0:
             # node with images & and is also a parent
-            #pp = '"' + str(self.name) + '":' + str(self.data) + '},{' 
-            #p = '"{name}":[{children}]'.format(name=self.name, data=self.data, children=', '.join(map(str, self.children)))
-            p = '"name":"{name}","id":{data},"children":[{children}]'.format(name=self.name, data=self.data, children=', '.join(map(str, self.children)))
+            #p = '"name":"{name}","id":{data},"children":[{children}]'.format(name=self.name, data=self.data, children=', '.join(map(str, self.children)))
+            p = '"name":"{name}","children":[{children}]'.format(name=self.name, children=', '.join(map(str, self.children)))
         else:
             # part of hierachy, no images attached
-            p = '"name":"{name}","id":{data},"children":[{children}]'.format(name=self.name, data=self.data, children=', '.join(map(str, self.children)))
+            #p = '"name":"{name}","id":{data},"children":[{children}]'.format(name=self.name, data=self.data, children=', '.join(map(str, self.children)))
+            p = '"name":"{name}","children":[{children}]'.format(name=self.name, children=', '.join(map(str, self.children)))
         return '{' + p + '}'
         
     # find a certain tag in the tree. Returns the node and print some statistics

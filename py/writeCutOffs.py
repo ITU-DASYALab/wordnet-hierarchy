@@ -15,6 +15,7 @@ def write_cut_offs_absorbe(elem, f, removed_nodes=None, *args, **kwargs):
     _, ch, breadcrumb, orig_bcstr = elem
     assert breadcrumb_str(breadcrumb) == orig_bcstr
     assert removed_nodes is not None
+    
     final_bc = removed_nodes.resolve(breadcrumb)
     #print("leaf: ", ch.name, "\n", breadcrumb_str(breadcrumb))
     #print(breadcrumb_str(final_bc))
@@ -23,7 +24,8 @@ def write_cut_offs_absorbe(elem, f, removed_nodes=None, *args, **kwargs):
         final_parent = final_bc[len(final_bc)-2]
     final_root = final_parent.root()
     if ch.data != -1:
-        f.write(f'{final_root.name}:{final_root.name}:{final_parent.name}:{ch.name}\n')
+        f.write(f'{ch.name}->{final_parent.name}\n')
+        #f.write(f'{final_root.name}:{final_root.name}:{final_parent.name}:{ch.name}\n')
 
 # write cut offs to file
 ## Format: TagsetName:HierarchyName:ParrentTagName:ChildTag:ChildTag:ChildTag:(...)
@@ -31,7 +33,8 @@ def write_cut_offs_trim(elem, f, *args, **kwargs):
     _, ch, p = elem
     def visitor(n):
         if n.data != -1:
-            f.write(f'{p.root().name}:{p.root().name}:{p.name}:{n.name}\n')
+            f.write(f'{n.name}->{p.name}\n')
+            #f.write(f'{p.root().name}:{p.root().name}:{p.name}:{n.name}\n')
     ch.visit(visitor)
 
 # write cut offs to file

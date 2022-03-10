@@ -1,13 +1,14 @@
 import json
 import argparse
-from os import posix_fallocate, remove, path
+from os import mkdir, posix_fallocate, remove, path, mkdir
+import venv
 from node import Node,NodeHistory,breadcrumb_str
 from writeCutOffs import write_cut_offs, write_cut_offs_verbose
 
-ids = None 
+ids = None
 
 # loads data from args
-def load_data_1():
+def load_data_1(args):
     data = []
     with open(args.hierarchy_f,'r') as f:
         data = json.load(f)
@@ -19,14 +20,13 @@ def load_data_1():
     tree = Node("root",None)
 
     for idx,paths in enumerate(data):
+        id = ids[idx]
         for path in paths:
             ch = tree
             for p in path:
                 ch = ch.add_node(p)
-            ch.data = ids[idx]
+            ch.data = id
     tree.data = -1
-    if args.cull != -1:
-        tree.cull(args.cull,exclude) 
     return tree
 
 # turns a json tree into an object tree recursively
@@ -101,6 +101,43 @@ def split_and_eval_size(tree, cut_offs, minNodes=50, maxNodes=500, subtrees=[]):
                 #print()
                 subtrees.remove(elem)
                 rerun = True
+    #print(len(subtrees))
+    seen = []
+    for elem in subtrees.copy(): # remove duplicate subtrees
+        if elem.name in seen:
+            #print(elem.name)
+            subtrees.remove(elem)
+            continue
+        seen.append(elem.name)
+    #print(len(subtrees))
+    return subtrees
+
+# split tree from top based on number of taggings
+def split_and_eval_taggings(tree, taggings,  cut_offs, minNodes=50, maxNodes=500, subtrees=[]):
+    object_tag_relation = read_object_tag_relation(taggings)
+    rerun = True
+    while rerun:
+        rerun = False
+        split = tree.split(1, cut_offs=cut_offs)
+        subtrees.extend(split) # add all trees to working list
+        for elem in subtrees:
+            missing, cnt = elem.count_taggings(object_tag_relation)
+            if cnt > maxNodes:
+                subtrees.remove(elem)
+                new_subtrees = elem.split(1, cut_offs=cut_offs)
+                subtrees.extend(new_subtrees)
+                rerun = True
+            if cnt < minNodes:
+                subtrees.remove(elem)
+                rerun = True
+    #print("hi",len(subtrees))
+    seen = []
+    for elem in subtrees.copy(): # remove duplicate subtrees
+        if elem.name in seen:
+            subtrees.remove(elem)
+            continue
+        seen.append(elem.name)
+    #print("hej",len(subtrees))
     return subtrees
 
 #print top 10 most frequent
@@ -194,11 +231,12 @@ def combine_list(mylist):
 # reads tag_count.csv (extracted from database) into a python dictionary
 def read_object_tag_relation(filename):
     object_tag_relation = {}
-    with open(filename) as file:
-        file.readline() #trow away first line
-        for line in file:
+    with open(filename) as f:
+        f.readline() #throw away first line
+        for line in f:
             (key, val) = line.split(",")
-            object_tag_relation[int(key)] = int(val)
+            object_tag_relation[key] = int(val) #tag_name, count
+            #object_tag_relation[int(key)] = int(val) #tag_id, count
     return object_tag_relation
 
 def print_trees(list_of_trees):
@@ -209,8 +247,17 @@ def print_trees(list_of_trees):
         else:
             print('{}\t size: {}\t height: {}'.format(elem.name, elem.count_BFS(lambda n: True), elem.count_height()))
 
+def prepare_duplicates_for_serilization(dups):
+    ret_dups = {}
+    for key, nodes in dups.items():
+        ret_entries = []
+        for node in nodes:
+            ret_entries.append(node.breadcrumb_str())
+        ret_dups[key]=ret_entries
+    return ret_dups
+
 # print statistics, and write tsvfile to be further processed by gnuplot
-def print_stats(tree, description, tsvfile, verbose=False):
+def print_stats(tree, description, tsvfile, objecttagrelations_f, verbose=False):
     def vprint(*args):
         if verbose:
             print(*args)
@@ -241,7 +288,7 @@ def print_stats(tree, description, tsvfile, verbose=False):
     vprint("tree height:\t\t", tree_height)
     
     avg_leaf_to_root = tree.avg_leaf_to_root()
-    stats[avg_leaf_to_root] = avg_leaf_to_root
+    stats['avg_leaf_to_root'] = avg_leaf_to_root
     vprint("avg leaf to root:\t", tree.avg_leaf_to_root())
 
     tree_widths = tree.count_widths()
@@ -252,22 +299,25 @@ def print_stats(tree, description, tsvfile, verbose=False):
     
     vprint("\nDUPLICATES")
     dups = tree.find_duplicates_by_name()
-    stats['dups_name']=dups
+    #stats['dups_name'] = prepare_duplicates_for_serilization(dups)
     vprint(f"different dups by name:\t\t{len(dups)}\tsum of dups: {sum_dups(dups)}")
     dups_data = tree.find_duplicates_by_data()
-    stats['dups_data']=dups_data
+    #stats['dups_data'] = prepare_duplicates_for_serilization(dups_data)
     vprint(f"different dups by data:\t\t{len(dups_data)}\tsum of dups: {sum_dups(dups_data)}")
     dups_name_data = tree.find_duplicates_by_name_with_inconsistent_data()
-    stats['dups_name_inconsisten_data']=dups_name_data
+    #stats['dups_name_inconsisten_data'] = prepare_duplicates_for_serilization(dups_name_data)
     vprint(f"different dups by data&name:\t{len(dups_name_data)}\tsum of dups: {sum_dups(dups_name_data)}\n")
     
-    object_tag_relation = read_object_tag_relation("/home/ek/Documents/Thesis/SQL/tag_count.csv")
-    no_present_tag , missing_tagging, total_taggings, tag_dict = tree.count_taggings(object_tag_relation)
+    object_tag_relation = read_object_tag_relation(objecttagrelations_f)
+    #no_present_tag , missing_tagging, total_taggings, tag_dict = tree.count_taggings_id(object_tag_relation)
+    not_in_ot, total_taggings, tag_dict = tree.count_taggings_name(object_tag_relation)
     stats['total_taggings']=total_taggings
     vprint(f"total taggings:\t{total_taggings}")
-    stats['not_present_tags']=no_present_tag
-    stats['missing_taggings']=missing_tagging
-    vprint(f"tag '-1':\t{no_present_tag}\t tagging not in DB:\t{missing_tagging}\n")
+    #stats['not_present_tags']=no_present_tag
+    print(f"total taggings:\t{total_taggings}")
+    stats['missing_taggings']=not_in_ot
+    #vprint(f"tag '-1':\t{no_present_tag}\t tagging not in DB:\t{missing_tagging}\n")
+    vprint(f"tagging not in DB:\t{not_in_ot}\n")
     
     comb_dict = combine_dicts(tree_widths, tag_dict)
     write_tsv(comb_dict, tsvfile)
@@ -276,22 +326,37 @@ def print_stats(tree, description, tsvfile, verbose=False):
 
 #Class to contain state during different steps of optimization
 class Compression_run:
-    def __init__(self, filename, max_children, verbose=False):
+    def __init__(self, args):
         self._cut_offs = []
         self._removed_nodes = NodeHistory()
-        self._max_children = max_children
-        self._verbose = verbose
+        self._max_children = args.max_children
+        self._verbose = args.verbose
+        #self._objecttagrelation = read_object_tag_relation(args.objecttagrelations_f)
+        self._objecttagrelations_f = args.objecttagrelations_f
         self._subtree_ids_map = None
         self._subtrees = None
-        self._root = load_data_2(filename)        
+        self._root = load_data_1(args)
+        self._basename = self.determine_basename(args.hierarchy_f)
         self._metadata = {
-            'input' : {'filename':path.basename(filename)},
+            'input' : {
+                'id_f':path.basename(args.id_f),                
+                'hierarchy_f':path.basename(args.hierarchy_f),
+                'objecttagrelations_f':path.basename(args.objecttagrelations_f),
+            },
             'outputs' : {},
             'subtrees' : {},
             'stats' : [],
+            'basename' : path.basename(self._basename),
         }
-        basename = path.splitext(filename)[0]
-        self._basename = f'{basename}_{self.get_postfix()}'
+
+    def determine_basename(self, filename):
+        basepath, basename = path.split(path.splitext(filename)[0])
+        outputdir = path.join(basepath, 'out')
+        try:
+            mkdir(outputdir)
+        except:
+            pass #dir most likely already exists
+        return path.join(outputdir, f'{basename}_{self.get_postfix()}')
         
     def get_postfix(self): # TODO incl all relevant params
         return f'max{self._max_children}'
@@ -300,9 +365,8 @@ class Compression_run:
         if tree is None:
             tree = self._root
         filename = f'{self._basename}_{filename}.tsv'
-        #TODO forskillige niveauer i stats & debug output + omstrukturering
-        print("cut_offs: ", len(self._cut_offs), "\t removed_nodes: ", len(self._removed_nodes)) #relevant to debug collaps
-        stats = print_stats(tree, description, filename, verbose=self._verbose)
+        #print("cut_offs: ", len(self._cut_offs), "\t removed_nodes: ", len(self._removed_nodes)) #relevant to debug collaps
+        stats = print_stats(tree, description, filename, self._objecttagrelations_f, verbose=self._verbose)
         if not is_subtree:
             self._metadata['stats'].append(stats)
         stats['filename'] = path.basename(filename)
@@ -336,7 +400,8 @@ class Compression_run:
     
     def split_into_subtrees(self, minNodes, maxNodes):
         assert self._subtrees is None
-        subtrees = split_and_eval_size(self._root, minNodes=minNodes, maxNodes=maxNodes, cut_offs=self._cut_offs, subtrees=[])
+        #subtrees = split_and_eval_size(self._root, minNodes=minNodes, maxNodes=maxNodes, cut_offs=self._cut_offs, subtrees=[])
+        subtrees = split_and_eval_taggings(self._root, taggings=self._objecttagrelations_f, minNodes=minNodes, maxNodes=maxNodes, cut_offs=self._cut_offs, subtrees=[])
         subtree_ids = {}
         i = 0
         for tree in subtrees:
@@ -352,7 +417,8 @@ class Compression_run:
     def write_subtree_stats(self, tree):
         id = self.get_subtree_id(tree)
         filename = f'subtree{id}'
-        return self.print_stats(description=f'subtree{id}', filename=filename, tree=tree, is_subtree=True)
+        return self.print_stats(description=f'{tree.name}', filename=filename, tree=tree, is_subtree=True)
+        #return self.print_stats(description=f'subtree{id}', filename=filename, tree=tree, is_subtree=True)
     
     def trim(self, depth, tree=None):
         if tree is None:
@@ -365,6 +431,7 @@ class Compression_run:
         outputs = self._metadata['outputs']
         outputs[name] = data
     
+    # not in use
     def write_subtrees_json(self):
         data = ','.join([str(subtree) for subtree in self._subtrees])
         data = f'[{data}]'
@@ -372,13 +439,20 @@ class Compression_run:
         write_file(filename, data)
         self.store_output('subtrees_json', {'filename' : filename})
         
+    # not in use
     def write_subtrees(self):
         for subtree in self._subtrees:
             stats = self.write_subtree_stats(subtree)
-            id = self.get_subtree_id(subtree)
+            id = 'subtree'+str(self.get_subtree_id(subtree))
             self._metadata['subtrees'][id] = stats
-        #print_trees(self._subtrees)
         self.write_subtrees_json()
+        
+    def combine_subtrees(self):
+        combined_tree = Node("semantic_tag",None)
+        for subtree in self._subtrees:
+            combined_tree.children.append(subtree)
+        print(len(self._subtrees))
+        return combined_tree
         
     def write_cut_offs(self, filename):
         filename = f'{self._basename}_{filename}'
@@ -399,7 +473,8 @@ class Compression_run:
         
     def write_json(self, filename=None, tree=None):
         if filename is None:
-            filename = f'{self._basename}_out.json'
+            filename = 'out.json'
+        filename = f'{self._basename}_{filename}'
         if tree is None:
             tree = self._root
         write_file(filename, tree)
@@ -415,52 +490,58 @@ def main():
     HELP_MAX_CHILDREN = 'maximum children per node'
     HELP_VERBOSE = 'enable verbose output'
     parser = argparse.ArgumentParser()
-    parser.add_argument('--hierarchy_f', type=str, default='lsc_wn_hierarchy_t6.json')
-    parser.add_argument('--id_f', type=str, default='distinct_features_t6.json')
+    parser.add_argument('--hierarchy_f', type=str, default='spotify/wn_hierarchy_t25.json')
+    parser.add_argument('--id_f', type=str, default='spotify/distinct_features_t25.json')
     parser.add_argument('--exclude_f', type=str, default='')
     parser.add_argument('--max_children', type=int, default=20)
     parser.add_argument('--verbose', type=bool, default=False)
+    parser.add_argument('--objecttagrelations_f', type=str, default='/home/ek/Documents/Thesis/SQL/mtb_tag_name_count.csv')
     args = parser.parse_args()
 
     with open(args.id_f,'r') as f: 
         ids = json.load(f)
+        
+    #print("distinct features ids:",len(ids))
                     
-    run = Compression_run('jsTree/tree_t5c0.json', max_children=args.max_children, verbose = args.verbose)
+    run = Compression_run(args)
     
-    run.print_stats("UNCOMPRESSED", 'stats_initial')
+    run.print_stats("Uncompressed", 'stats_initial')
+    run.write_json(filename='initial.json')
     #root.print_tree()
 
     if run.clean_tree_with_file(args.exclude_f):
-        run.print_stats("POST EXCLUDE", 'stats_post_exclude')
+        run.print_stats("Post exclude", 'stats_post_exclude')
 
 
     run.collapse_all_single_children()
-    run.print_stats("COMPRESS SINGULAR CHAIN", 'stats_remove_singular_chain')
+    run.print_stats("Compress singular chain", 'stats_remove_singular_chain')
     #root.print_tree()
 
     run.approach_max_child_number()
-    run.print_stats("UTILIZE SIZE OF CHILDREN", 'stats_post_collapse')
-    #root.print_tree()
+    run.print_stats("Approximate max number of children", 'stats_approximate_max_child')
+    for ch in run._root.children:
+        print(ch.name)
 
     #* merge is last step
     #cnt_merged = run.merge_identical_subtrees()
     #print("Merged count: ",cnt_merged)
     #run.print_stats("MERGE", 'stats_after_merge')
     
-    #TODO bygge script der tager data fra json og kører plots
-    # jq . metadata.json
-
-    run.write_json()
+    run.write_json(filename='intermediate_tree.json')
     #write_graph(root, 'graph.dot', 2)  
             
-    subtree_list = run.split_into_subtrees(minNodes=100, maxNodes=500)        
+    # split into subtrees and trim subtrees
+    #subtree_list = run.split_into_subtrees(minNodes=100, maxNodes=1000)        
+    subtree_list = run.split_into_subtrees(minNodes=5000, maxNodes=500000)     
     for subtree in subtree_list:
         cnt_merged = run.merge_identical_subtrees(subtree, also_leafs=True)
         #print("-- MERGED SUBTREE --", subtree.name)
         #print("Merged count: ",cnt_merged)
-        run.trim(depth=5, tree=subtree)
-
-    run.write_subtrees()
+        run.trim(depth=7, tree=subtree)
+    #run.write_subtrees()
+    combined_tree = run.combine_subtrees()
+    run.print_stats('Split, merge and trim','stats_split_merge_trim', combined_tree)
+    run.write_json(filename='combined_tree.json', tree=combined_tree)
 
     #default
     run.write_cut_offs('cut_off.txt')
