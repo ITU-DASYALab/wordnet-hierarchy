@@ -1,0 +1,1016 @@
+ABSORBE: root : <- thing | data: 12548
+ABSORBE: root : <- relation | data: 12568
+ABSORBE: matter : <- solid | data: 12557
+ABSORBE: communication : <- signal | data: 12925
+ABSORBE: person : <- native | data: 8947
+ABSORBE: person : <- peer | data: 8954
+ABSORBE: person : <- Black | data: 8963
+ABSORBE: person : <- authority | data: 9137
+ABSORBE: person : <- preserver | data: 9695
+ABSORBE: person : <- computer_user | data: 9260
+ABSORBE: person : <- gambler | data: 9394
+ABSORBE: person : <- enrollee | data: 12475
+ABSORBE: person : <- speculator | data: 12761
+ABSORBE: social_group : <- gathering | data: 12934
+ABSORBE: living_thing : <- cell | data: 2
+ABSORBE: natural_object : <- rock | data: 8903
+ABSORBE: natural_object : <- celestial_body | data: 12413
+ABSORBE: natural_object : <- body | data: 12826
+ABSORBE: artifact : <- article | data: 12316
+ABSORBE: artifact : <- padding | data: 12538
+ABSORBE: artifact : <- fixture | data: 12926
+ABSORBE: point : <- geographic_point | data: 12745
+ABSORBE: space : <- opening | data: 12681
+ABSORBE: geological_formation -> slope : <- descent | data: 8845
+ABSORBE: communicator : <- articulator | data: 9124
+ABSORBE: communicator : <- reporter | data: 9735
+ABSORBE: worker : <- boatman | data: 9183
+ABSORBE: person_of_color : <- Black | data: 8963
+ABSORBE: adult : <- important_person | data: 9469
+ABSORBE: religious_person : <- Christian | data: 12695
+ABSORBE: African : <- Nigerian | data: 9041
+ABSORBE: leader : <- trainer | data: 9880
+ABSORBE: leader : <- employer | data: 9329
+ABSORBE: relative : <- in-law | data: 9474
+ABSORBE: food : <- water | data: 8781
+ABSORBE: act : <- action | data: 12527
+ABSORBE: attribute -> round_shape : <- sphere | data: 12555
+ABSORBE: attribute -> solid : <- convex_shape | data: 12211
+ABSORBE: instrumentality : <- ceramic | data: 3386
+ABSORBE: structure : <- balcony | data: 2745
+ABSORBE: fabric : <- toweling | data: 7056
+ABSORBE: fabric : <- terry | data: 6946
+ABSORBE: facility : <- depository | data: 12585
+ABSORBE: surface : <- side | data: 12596
+ABSORBE: hill : <- knoll | data: 8870
+ABSORBE: worker -> skilled_worker : <- aviator | data: 9138
+ABSORBE: worker -> employee : <- salesperson | data: 9759
+ABSORBE: nutriment : <- vitamin | data: 12284
+ABSORBE: fare : <- diet | data: 7574
+ABSORBE: beverage : <- cider | data: 8717
+ABSORBE: curve : <- closed_curve | data: 12218
+ABSORBE: person : <- native | data: 8947
+ABSORBE: person : <- peer | data: 8954
+ABSORBE: person : <- Black | data: 8963
+ABSORBE: person : <- authority | data: 9137
+ABSORBE: person : <- preserver | data: 9695
+ABSORBE: person : <- computer_user | data: 9260
+ABSORBE: person : <- gambler | data: 9394
+ABSORBE: person : <- enrollee | data: 12475
+ABSORBE: person : <- speculator | data: 12761
+ABSORBE: microorganism : <- bacteria | data: 12725
+ABSORBE: eubacteria : <- spirillum | data: 191
+ABSORBE: eubacteria : <- streptococcus | data: 195
+ABSORBE: eubacteria : <- spirochete | data: 196
+ABSORBE: eubacteria : <- coccus | data: 12305
+ABSORBE: natural_object -> plant_organ : <- root | data: 12085
+ABSORBE: device : <- blower | data: 2968
+ABSORBE: device : <- detector | data: 3880
+ABSORBE: device : <- magnet | data: 5143
+ABSORBE: device : <- pull | data: 5889
+ABSORBE: implement : <- beater | data: 2868
+ABSORBE: implement : <- fire_iron | data: 4275
+ABSORBE: implement : <- hook | data: 4748
+ABSORBE: implement : <- oar | data: 5444
+ABSORBE: container : <- cassette | data: 3344
+ABSORBE: weaponry : <- ammunition | data: 2577
+ABSORBE: weaponry : <- armament | data: 2632
+ABSORBE: connection : <- attachment | data: 2668
+ABSORBE: system : <- audio_system | data: 2676
+ABSORBE: consumer_goods : <- durables | data: 12311
+ABSORBE: covering -> clothing : <- apparel | data: 2613
+ABSORBE: covering -> clothing : <- footwear | data: 4346
+ABSORBE: covering -> clothing : <- uniform | data: 7179
+ABSORBE: covering -> clothing : <- handwear | data: 4637
+ABSORBE: covering -> protective_covering : <- shield | data: 6352
+ABSORBE: covering -> protective_covering : <- sheath | data: 6336
+ABSORBE: establishment : <- institution | data: 4844
+ABSORBE: building : <- greenhouse | data: 4553
+ABSORBE: defensive_structure : <- fortress | data: 4359
+ABSORBE: memorial : <- megalith | data: 5237
+ABSORBE: road : <- highway | data: 12928
+ABSORBE: representative : <- agent | data: 12641
+ABSORBE: worker -> skilled_worker -> serviceman : <- military_officer | data: 9573
+ABSORBE: health_professional : <- medical_practitioner | data: 9562
+ABSORBE: musician : <- percussionist | data: 9661
+ABSORBE: merchant : <- seller | data: 9780
+ABSORBE: nutriment -> dish : <- custard | data: 7775
+ABSORBE: nutriment -> dish : <- omelet | data: 8359
+ABSORBE: nutriment -> meal : <- breakfast | data: 7609
+ABSORBE: nutriment -> meal : <- picnic | data: 7617
+ABSORBE: nutriment -> dainty : <- gelatin | data: 7803
+ABSORBE: foodstuff -> concoction : <- dough | data: 8431
+ABSORBE: foodstuff -> starches : <- rice | data: 8212
+ABSORBE: foodstuff -> grain : <- corn | data: 8028
+ABSORBE: foodstuff -> grain : <- rice | data: 8212
+ABSORBE: beverage -> fruit_juice : <- orange_juice | data: 8730
+ABSORBE: polygon : <- quadrilateral | data: 12522
+ABSORBE: chromatic_color : <- pink | data: 7489
+ABSORBE: communicator : <- articulator | data: 9124
+ABSORBE: communicator : <- reporter | data: 9735
+ABSORBE: worker : <- boatman | data: 9183
+ABSORBE: person_of_color : <- Black | data: 8963
+ABSORBE: adult : <- important_person | data: 9469
+ABSORBE: religious_person : <- Christian | data: 12695
+ABSORBE: African : <- Nigerian | data: 9041
+ABSORBE: leader : <- trainer | data: 9880
+ABSORBE: leader : <- employer | data: 9329
+ABSORBE: relative : <- in-law | data: 9474
+ABSORBE: vascular_plant : <- desert_plant | data: 12082
+ABSORBE: mechanism : <- gear | data: 4480
+ABSORBE: restraint : <- brake | data: 3071
+ABSORBE: electrical_device : <- battery | data: 2843
+ABSORBE: lifting_device : <- hoist | data: 4732
+ABSORBE: implement -> bar : <- rail | data: 5959
+ABSORBE: implement -> tool : <- drill | data: 4021
+ABSORBE: implement -> stick : <- walking_stick | data: 7267
+ABSORBE: container -> dispenser : <- aerosol | data: 2528
+ABSORBE: container -> vessel : <- bucket | data: 3132
+ABSORBE: container -> box : <- crate | data: 3750
+ABSORBE: furnishing -> furniture : <- bedroom_furniture | data: 2875
+ABSORBE: furnishing -> furniture : <- chest_of_drawers | data: 3432
+ABSORBE: furnishing -> furniture : <- dining-room_furniture | data: 3915
+ABSORBE: furnishing -> furniture : <- office_furniture | data: 5457
+ABSORBE: equipment -> electronic_equipment : <- audio_system | data: 2676
+ABSORBE: equipment -> game_equipment : <- bowling_equipment | data: 3050
+ABSORBE: equipment -> game_equipment : <- game | data: 4426
+ABSORBE: equipment -> photographic_equipment : <- photographic_paper | data: 5672
+ABSORBE: equipment -> gear : <- regalia | data: 6027
+ABSORBE: system -> communication_system : <- telecommunication_system | data: 6910
+ABSORBE: system -> network : <- computer_network | data: 3629
+ABSORBE: commodity -> clothing : <- apparel | data: 2613
+ABSORBE: commodity -> clothing : <- footwear | data: 4346
+ABSORBE: commodity -> clothing : <- uniform | data: 7179
+ABSORBE: commodity -> clothing : <- handwear | data: 4637
+ABSORBE: covering -> clothing -> garment : <- vest | data: 7218
+ABSORBE: covering -> clothing -> attire : <- outfit | data: 5502
+ABSORBE: covering -> clothing -> attire : <- costume | data: 3706
+ABSORBE: covering -> clothing -> protective_garment : <- coverall | data: 3732
+ABSORBE: bedclothes : <- bedspread | data: 2877
+ABSORBE: area -> room : <- closet | data: 3530
+ABSORBE: building -> house : <- mansion | data: 5178
+ABSORBE: wall : <- gable | data: 4413
+ABSORBE: stronghold : <- bastion | data: 2828
+ABSORBE: photograph : <- radiogram | data: 5945
+ABSORBE: plot : <- garden | data: 4435
+ABSORBE: relative -> baby : <- neonate | data: 9605
+ABSORBE: appetizer : <- cocktail | data: 7631
+ABSORBE: foodstuff -> starches -> bread : <- loaf_of_bread | data: 7838
+ABSORBE: foodstuff -> starches -> bread : <- rye_bread | data: 7850
+ABSORBE: foodstuff -> starches -> bread : <- white_bread | data: 7860
+ABSORBE: beverage -> alcohol -> liquor : <- rum | data: 8639
+ABSORBE: worker -> skilled_worker : <- aviator | data: 9138
+ABSORBE: worker -> employee : <- salesperson | data: 9759
+ABSORBE: dog : <- corgi | data: 1532
+ABSORBE: plant -> herb : <- banana | data: 11060
+ABSORBE: plant -> woody_plant : <- bramble | data: 12080
+ABSORBE: machine : <- printer | data: 5861
+ABSORBE: mechanism -> mechanical_device : <- compressor | data: 3625
+ABSORBE: mechanism -> mechanical_device : <- hook | data: 4749
+ABSORBE: mechanism -> rotating_mechanism : <- circle | data: 3478
+ABSORBE: instrument -> measuring_instrument : <- measuring_stick | data: 5224
+ABSORBE: instrument -> weapon : <- missile | data: 5301
+ABSORBE: musical_instrument -> bass : <- bass_horn | data: 2823
+ABSORBE: restraint -> fastener : <- clip | data: 3513
+ABSORBE: restraint -> fastener : <- nail | data: 5390
+ABSORBE: restraint -> fastener : <- paper_fastener | data: 5576
+ABSORBE: source_of_illumination -> lamp : <- candle | data: 3244
+ABSORBE: recording : <- tape | data: 6878
+ABSORBE: semiconductor_device : <- chip | data: 3451
+ABSORBE: holder : <- candlestick | data: 3246
+ABSORBE: implement -> tool -> hand_tool : <- wrench | data: 7434
+ABSORBE: implement -> tool -> cutting_implement : <- bit | data: 2945
+ABSORBE: implement -> tool -> garden_tool : <- lawn_mower | data: 5012
+ABSORBE: ceramic_ware : <- porcelain | data: 5806
+ABSORBE: container -> vessel -> tank : <- aquarium | data: 2621
+ABSORBE: container -> vessel -> bottle : <- jug | data: 4901
+ABSORBE: container -> vessel -> bottle : <- wine_bottle | data: 7391
+ABSORBE: conveyance -> vehicle -> rocket : <- missile | data: 5301
+ABSORBE: equipment -> electronic_equipment -> peripheral : <- printer | data: 5861
+ABSORBE: equipment -> game_equipment -> ball : <- billiard_ball | data: 2927
+ABSORBE: equipment -> sports_equipment -> skate : <- ice_skate | data: 4819
+ABSORBE: commodity -> clothing -> garment : <- vest | data: 7218
+ABSORBE: commodity -> clothing -> attire : <- outfit | data: 5502
+ABSORBE: commodity -> clothing -> attire : <- costume | data: 3706
+ABSORBE: commodity -> clothing -> protective_garment : <- coverall | data: 3732
+ABSORBE: covering -> clothing -> garment -> trouser : <- short_pants | data: 6378
+ABSORBE: covering -> clothing -> garment -> shirt : <- jersey | data: 4882
+ABSORBE: covering -> clothing -> headdress -> hat : <- sunhat | data: 6775
+ABSORBE: covering -> cloth_covering -> bandage : <- adhesive_bandage | data: 2522
+ABSORBE: housing -> dwelling -> house : <- mansion | data: 5178
+ABSORBE: area -> enclosure -> vivarium : <- aquarium | data: 2621
+ABSORBE: fence : <- stone_wall | data: 6707
+ABSORBE: way -> tube : <- pipe | data: 12651
+ABSORBE: nutriment -> dainty -> candy : <- fudge | data: 7711
+ABSORBE: nutriment -> dainty -> candy : <- kiss | data: 7719
+ABSORBE: foodstuff -> starches -> bread -> quick_bread : <- biscuit | data: 7891
+ABSORBE: representative : <- agent | data: 12641
+ABSORBE: worker -> skilled_worker -> serviceman : <- military_officer | data: 9573
+ABSORBE: health_professional : <- medical_practitioner | data: 9562
+ABSORBE: musician : <- percussionist | data: 9661
+ABSORBE: merchant : <- seller | data: 9780
+ABSORBE: animal -> invertebrate -> insect : <- odonate | data: 1806
+ABSORBE: animal -> invertebrate -> bivalve : <- mussel | data: 1128
+ABSORBE: plant -> herb -> crucifer : <- cress | data: 10328
+ABSORBE: plant -> woody_plant -> tree : <- southern_beech | data: 10902
+ABSORBE: plant -> woody_plant -> tree : <- cork_tree | data: 11302
+ABSORBE: natural_object -> plant_organ -> edible_fruit : <- custard_apple | data: 8143
+ABSORBE: natural_object -> plant_organ -> seed : <- nut | data: 12099
+ABSORBE: brass : <- bass_horn | data: 2823
+ABSORBE: musical_instrument -> stringed_instrument -> bowed_stringed_instrument : <- viol | data: 7237
+ABSORBE: upright : <- column | data: 3598
+ABSORBE: implement -> bar -> compound_lever : <- scissors | data: 6236
+ABSORBE: implement -> tool -> hand_tool -> opener : <- bottle_opener | data: 3033
+ABSORBE: implement -> tool -> hand_tool -> saw : <- handsaw | data: 4631
+ABSORBE: warship : <- submersible | data: 6757
+ABSORBE: furnishing -> furniture -> seat -> chair : <- folding_chair | data: 4336
+ABSORBE: receiver : <- radio_receiver | data: 5949
+ABSORBE: commodity -> clothing -> garment -> trouser : <- short_pants | data: 6378
+ABSORBE: commodity -> clothing -> garment -> shirt : <- jersey | data: 4882
+ABSORBE: commodity -> clothing -> headdress -> hat : <- sunhat | data: 6775
+ABSORBE: coat : <- raincoat | data: 5964
+ABSORBE: cloak : <- tunic | data: 7143
+ABSORBE: establishment -> shop : <- booth | data: 3021
+ABSORBE: foodstuff -> ingredient -> condiment -> sauce : <- dressing | data: 8322
+ABSORBE: relative -> baby : <- neonate | data: 9605
+ABSORBE: hound : <- greyhound | data: 1414
+ABSORBE: sporting_dog : <- setter | data: 1466
+ABSORBE: animal -> invertebrate -> insect -> dipterous_insect : <- mosquito | data: 1708
+ABSORBE: animal -> invertebrate -> insect -> orthopterous_insect : <- grasshopper | data: 1758
+ABSORBE: animal -> invertebrate -> insect -> orthopterous_insect : <- cricket | data: 1761
+ABSORBE: plant -> woody_plant -> tree -> angiospermous_tree : <- poplar | data: 11564
+ABSORBE: plant -> woody_plant -> tree -> oak : <- live_oak | data: 10909
+ABSORBE: wheel : <- waterwheel | data: 7314
+ABSORBE: edge_tool : <- scissors | data: 6236
+ABSORBE: pan : <- saucepan | data: 6211
+ABSORBE: container -> wheeled_vehicle -> self-propelled_vehicle -> car : <- racer | data: 5931
+ABSORBE: conveyance -> vehicle -> craft -> ship : <- passenger_ship | data: 5602
+ABSORBE: conveyance -> vehicle -> craft -> ship : <- cargo_ship | data: 3301
+ABSORBE: coat : <- raincoat | data: 5964
+ABSORBE: cloak : <- tunic | data: 7143
+ABSORBE: spaniel : <- springer_spaniel | data: 1474
+ABSORBE: conifer : <- fir | data: 9991
+ABSORBE: conifer : <- arborvitae | data: 10036
+ABSORBE: plant -> woody_plant -> tree -> angiospermous_tree -> fruit_tree : <- cherry | data: 11415
+ABSORBE: knife : <- pocketknife | data: 5772
+ABSORBE: van : <- passenger_van | data: 5604
+ABSORBE: warship : <- submersible | data: 6757
+ABSORBE: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> car : <- racer | data: 5931
+ABSORBE: citrus : <- orange | data: 11513
+ABSORBE: optical_telescope : <- refracting_telescope | data: 6022
+ABSORBE: van : <- passenger_van | data: 5604
+ABSORBE: person : <- recipient | data: 8955
+ABSORBE: substance : <- water | data: 8781
+ABSORBE: substance : <- charcoal | data: 12266
+ABSORBE: natural_object : <- star | data: 12707
+ABSORBE: liquid : <- water | data: 8781
+ABSORBE: attribute -> space : <- opening | data: 12681
+ABSORBE: ware : <- woodenware | data: 7411
+ABSORBE: liquid -> beverage : <- cider | data: 8717
+ABSORBE: bread : <- loaf_of_bread | data: 7838
+ABSORBE: bread : <- rye_bread | data: 7850
+ABSORBE: bread : <- white_bread | data: 7860
+ABSORBE: produce -> edible_fruit : <- custard_apple | data: 8143
+ABSORBE: ball : <- globule | data: 12407
+ABSORBE: person : <- recipient | data: 8955
+ABSORBE: animal : <- greyhound | data: 1414
+ABSORBE: covering -> protective_covering : <- plate | data: 5748
+ABSORBE: establishment : <- penal_institution | data: 5632
+ABSORBE: agent -> liquor : <- rum | data: 8639
+ABSORBE: liquid -> beverage -> fruit_juice : <- orange_juice | data: 8730
+ABSORBE: baked_goods -> quick_bread : <- biscuit | data: 7891
+ABSORBE: produce -> vegetable -> legume : <- pea | data: 7998
+ABSORBE: psychological_feature -> sport : <- outdoor_sport | data: 12
+ABSORBE: psychological_feature -> sport : <- cycling | data: 64
+ABSORBE: implement -> stick : <- cane | data: 3248
+ABSORBE: artillery : <- cannon | data: 3252
+ABSORBE: equipment -> recorder : <- tape_recorder | data: 6883
+ABSORBE: ligament : <- wire | data: 7400
+ABSORBE: covering -> clothing -> hosiery : <- tights | data: 6983
+ABSORBE: liquid -> beverage -> alcohol -> liquor : <- rum | data: 8639
+ABSORBE: pepper : <- hot_pepper | data: 7979
+ABSORBE: animal -> vertebrate -> reptile : <- anapsid | data: 645
+ABSORBE: fruit : <- legume | data: 10174
+ABSORBE: machine -> printer : <- typewriter | data: 7165
+ABSORBE: restraint -> fastener : <- tack | data: 6851
+ABSORBE: restraint -> fastener : <- thumbtack | data: 6976
+ABSORBE: electrical_device -> voltaic_battery : <- storage_battery | data: 6715
+ABSORBE: commodity -> clothing -> hosiery : <- tights | data: 6983
+ABSORBE: field_game : <- ball_game | data: 105
+ABSORBE: animal -> invertebrate -> arachnid : <- tick | data: 818
+ABSORBE: animal -> vertebrate -> bird -> parrot : <- cockatoo | data: 908
+ABSORBE: animal -> vertebrate -> bird -> parrot : <- parakeet | data: 914
+ABSORBE: diapsid : <- saurian | data: 670
+ABSORBE: diapsid : <- archosaur | data: 12726
+ABSORBE: placental : <- lagomorph | data: 1895
+ABSORBE: placental : <- pachyderm | data: 2217
+ABSORBE: placental : <- elephant | data: 2295
+ABSORBE: animal -> vertebrate -> mammal -> elephant : <- Indian_elephant | data: 2296
+ABSORBE: animal -> vertebrate -> mammal -> elephant : <- mammoth | data: 2298
+ABSORBE: plant -> woody_plant -> bramble_bush : <- raspberry | data: 11444
+ABSORBE: fresh_bean : <- green_bean | data: 8012
+ABSORBE: field_game : <- ball_game | data: 105
+ABSORBE: animal -> vertebrate -> mammal -> rodent : <- mouse | data: 1910
+ABSORBE: animal -> vertebrate -> mammal -> rodent : <- rat | data: 1911
+ABSORBE: animal -> vertebrate -> mammal -> rodent : <- hamster | data: 1928
+ABSORBE: animal -> vertebrate -> mammal -> rodent : <- cavy | data: 1962
+ABSORBE: animal -> vertebrate -> mammal -> edentate : <- armadillo | data: 2218
+ABSORBE: animal -> vertebrate -> mammal -> edentate : <- sloth | data: 2222
+ABSORBE: animal -> vertebrate -> mammal -> primate : <- ape | data: 2234
+ABSORBE: animal -> vertebrate -> mammal -> carnivore -> musteline_mammal : <- otter | data: 2205
+ABSORBE: plant -> woody_plant -> tree -> angiospermous_tree -> fruit_tree : <- flowering_cherry | data: 11432
+ABSORBE: Old_World_monkey : <- baboon | data: 2263
+ABSORBE: liquid : <- water | data: 8781
+ABSORBE: curve : <- loop | data: 12719
+ABSORBE: part -> beverage : <- cider | data: 8717
+ABSORBE: drug -> liquor : <- rum | data: 8639
+ABSORBE: produce -> vegetable -> legume : <- green_pea | data: 7999
+ABSORBE: polygon : <- square | data: 12521
+ABSORBE: part -> beverage -> fruit_juice : <- orange_juice | data: 8730
+ABSORBE: covering -> protective_covering -> armor_plate : <- helmet | data: 4700
+ABSORBE: psychological_feature -> sport -> fishing : <- angling | data: 76
+ABSORBE: part -> beverage -> alcohol -> liquor : <- rum | data: 8639
+ABSORBE: animal -> vertebrate -> bird -> bird_of_prey : <- falcon | data: 534
+ABSORBE: animal -> vertebrate -> bird -> seabird : <- sphenisciform_seabird | data: 1316
+ABSORBE: marsupial : <- phalanger | data: 1039
+ABSORBE: food_fish : <- tuna | data: 2453
+ABSORBE: animal -> vertebrate -> mammal -> carnivore -> dog : <- corgi | data: 1532
+ABSORBE: animal -> vertebrate -> fish -> teleost_fish -> percoid_fish : <- pike | data: 2373
+ABSORBE: animal -> vertebrate -> fish -> teleost_fish -> percoid_fish : <- sunfish | data: 2377
+ABSORBE: hound : <- greyhound | data: 1414
+ABSORBE: sporting_dog : <- setter | data: 1466
+ABSORBE: spaniel : <- springer_spaniel | data: 1474
+ABSORBE: living_thing : <- neutrophil | data: 7515
+ABSORBE: foam : <- soapsuds | data: 8916
+ABSORBE: snake : <- python | data: 756
+ABSORBE: sea_turtle : <- ridley | data: 649
+ABSORBE: animal -> vertebrate -> mammal -> primate : <- great_ape | data: 2243
+ABSORBE: animal -> vertebrate -> fish -> teleost_fish -> percoid_fish : <- tuna | data: 2453
+ABSORBE: animal -> vertebrate -> mammal -> primate : <- gorilla | data: 2245
+ABSORBE: matter : <- drinking_water | data: 8784
+ABSORBE: drinking_water : <- bottled_water | data: 8782
+ABSORBE: drinking_water : <- soda_water | data: 8785
+ABSORBE: drinking_water : <- mineral_water | data: 8786
+ABSORBE: body_part : <- skin | data: 7501
+ABSORBE: psychological_feature : <- activity | data: 12528
+ABSORBE: group : <- social_group | data: 12930
+ABSORBE: group : <- collection | data: 8793
+ABSORBE: location : <- region | data: 12704
+ABSORBE: location : <- point | data: 12646
+ABSORBE: agent : <- herpes | data: 183
+ABSORBE: agent : <- powder | data: 5835
+ABSORBE: agent : <- alcohol | data: 8535
+ABSORBE: material : <- paint | data: 5544
+ABSORBE: drug : <- powder | data: 5835
+ABSORBE: drug : <- alcohol | data: 8535
+ABSORBE: baked_goods : <- bread | data: 7818
+ABSORBE: psychological_feature -> athletic_game : <- court_game | data: 120
+ABSORBE: psychological_feature -> athletic_game : <- field_game | data: 98
+ABSORBE: attribute -> figure : <- plane_figure | data: 12208
+ABSORBE: attribute -> figure : <- polygon | data: 12215
+ABSORBE: attribute -> figure : <- triangle | data: 12228
+ABSORBE: attribute -> solid : <- polyhedron | data: 12751
+ABSORBE: attribute -> visual_property : <- chromatic_color | data: 7460
+ABSORBE: attribute -> Holy_Order : <- priest | data: 9698
+ABSORBE: part -> piece_of_cloth : <- towel | data: 7055
+ABSORBE: location -> geographical_area : <- court | data: 3728
+ABSORBE: location -> topographic_point : <- burial_chamber | data: 3170
+ABSORBE: geological_formation -> shore : <- seashore | data: 8906
+ABSORBE: geological_formation -> natural_elevation : <- hill | data: 8863
+ABSORBE: geological_formation -> natural_elevation : <- promontory | data: 8891
+ABSORBE: geological_formation -> natural_depression : <- hole | data: 8865
+ABSORBE: good_person : <- benefactor | data: 8937
+ABSORBE: female : <- woman | data: 9919
+ABSORBE: male : <- man | data: 12971
+ABSORBE: communicator : <- announcer | data: 9113
+ABSORBE: entertainer : <- musician | data: 9599
+ABSORBE: unfortunate : <- sick_person | data: 9797
+ABSORBE: leader : <- deputy | data: 9292
+ABSORBE: leader : <- senator | data: 9784
+ABSORBE: expert : <- therapist | data: 9869
+ABSORBE: relative : <- child | data: 9230
+ABSORBE: creator : <- maker | data: 9543
+ABSORBE: capitalist : <- businessperson | data: 12591
+ABSORBE: capitalist : <- retailer | data: 9741
+ABSORBE: consumer : <- drinker | data: 9311
+ABSORBE: defender : <- lawman | data: 9512
+ABSORBE: agent -> liquor : <- gin | data: 8634
+ABSORBE: agent -> liquor : <- whiskey | data: 8646
+ABSORBE: agent -> mixed_drink : <- punch | data: 8762
+ABSORBE: agent -> beer : <- lager | data: 8546
+ABSORBE: agent -> beer : <- ale | data: 8553
+ABSORBE: drug -> liquor : <- gin | data: 8634
+ABSORBE: drug -> liquor : <- whiskey | data: 8646
+ABSORBE: drug -> mixed_drink : <- punch | data: 8762
+ABSORBE: drug -> beer : <- lager | data: 8546
+ABSORBE: drug -> beer : <- ale | data: 8553
+ABSORBE: baked_goods -> bun : <- sweet_roll | data: 7885
+ABSORBE: baked_goods -> quick_bread : <- cornbread | data: 7863
+ABSORBE: baked_goods -> quick_bread : <- muffin | data: 7871
+ABSORBE: nutriment -> course : <- appetizer | data: 7629
+ABSORBE: nutriment -> course : <- dessert | data: 7737
+ABSORBE: nutriment -> meal : <- bite | data: 7618
+ABSORBE: nutriment -> dainty : <- sweet | data: 7687
+ABSORBE: beverage -> soft_drink : <- cola | data: 8746
+ABSORBE: psychological_feature -> sport -> contact_sport : <- boxing | data: 34
+ABSORBE: psychological_feature -> sport -> contact_sport : <- wrestling | data: 44
+ABSORBE: psychological_feature -> sport -> athletic_game : <- court_game | data: 120
+ABSORBE: psychological_feature -> sport -> athletic_game : <- field_game | data: 98
+ABSORBE: psychological_feature -> sport -> swimming : <- skin_diving | data: 28
+ABSORBE: attribute -> visual_property -> brown : <- reddish_brown | data: 7495
+ABSORBE: part -> beverage -> soft_drink : <- cola | data: 8746
+ABSORBE: microorganism : <- herpes | data: 183
+ABSORBE: natural_object -> body_covering : <- skin | data: 7501
+ABSORBE: natural_object -> plant_organ : <- stalk | data: 12575
+ABSORBE: natural_object -> plant_organ : <- fruit | data: 12096
+ABSORBE: way : <- conduit | data: 12904
+ABSORBE: way : <- passageway | data: 12844
+ABSORBE: plaything : <- doll | data: 3960
+ABSORBE: sheet : <- disk | data: 3938
+ABSORBE: creation : <- representation | data: 12950
+ABSORBE: creation : <- photocopy | data: 12355
+ABSORBE: building_material : <- brick | data: 3099
+ABSORBE: line : <- rope | data: 6113
+ABSORBE: excavation : <- ditch | data: 3951
+ABSORBE: surface : <- platform | data: 5752
+ABSORBE: surface : <- floor | data: 4316
+ABSORBE: float : <- life_preserver | data: 5044
+ABSORBE: ware : <- tableware | data: 6848
+ABSORBE: worker -> employee : <- workman | data: 9922
+ABSORBE: adult -> professional : <- nurse | data: 9616
+ABSORBE: adult -> professional : <- doctor | data: 9301
+ABSORBE: adult -> professional : <- teacher | data: 9857
+ABSORBE: leader -> clergyman : <- priest | data: 9698
+ABSORBE: liquid -> beverage -> soft_drink : <- cola | data: 8746
+ABSORBE: produce -> edible_fruit -> apple : <- eating_apple | data: 8060
+ABSORBE: produce -> edible_fruit -> apple : <- Delicious | data: 8062
+ABSORBE: produce -> edible_fruit -> citrus : <- orange | data: 8097
+ABSORBE: produce -> edible_fruit -> citrus : <- mandarin | data: 8098
+ABSORBE: produce -> edible_fruit -> citrus : <- sweet_orange | data: 8104
+ABSORBE: produce -> vegetable -> greens : <- salad_green | data: 7990
+ABSORBE: produce -> vegetable -> greens : <- lettuce | data: 7991
+ABSORBE: produce -> vegetable -> root_vegetable : <- potato | data: 7930
+ABSORBE: produce -> vegetable -> solanaceous_vegetable : <- potato | data: 7930
+ABSORBE: produce -> vegetable -> solanaceous_vegetable : <- pepper | data: 7974
+ABSORBE: produce -> vegetable -> solanaceous_vegetable : <- tomato | data: 8038
+ABSORBE: produce -> vegetable -> solanaceous_vegetable : <- chili | data: 7980
+ABSORBE: produce -> vegetable -> cruciferous_vegetable : <- cabbage | data: 7944
+ABSORBE: produce -> vegetable -> squash : <- winter_squash | data: 7960
+ABSORBE: produce -> vegetable -> legume : <- fresh_bean | data: 8010
+ABSORBE: nutriment -> course -> frozen_dessert : <- ice_cream | data: 7753
+ABSORBE: nutriment -> dish -> soup : <- chowder | data: 7659
+ABSORBE: nutriment -> dish -> snack_food : <- sandwich | data: 7901
+ABSORBE: nutriment -> dish -> salad : <- tossed_salad | data: 8221
+ABSORBE: nutriment -> dainty -> confiture : <- conserve | data: 7797
+ABSORBE: foodstuff -> ingredient -> herb : <- tea | data: 8771
+ABSORBE: beverage -> alcohol -> liquor : <- gin | data: 8634
+ABSORBE: beverage -> alcohol -> liquor : <- whiskey | data: 8646
+ABSORBE: beverage -> alcohol -> mixed_drink : <- punch | data: 8762
+ABSORBE: beverage -> alcohol -> beer : <- lager | data: 8546
+ABSORBE: beverage -> alcohol -> beer : <- ale | data: 8553
+ABSORBE: part -> beverage -> alcohol -> liquor : <- gin | data: 8634
+ABSORBE: part -> beverage -> alcohol -> liquor : <- whiskey | data: 8646
+ABSORBE: part -> beverage -> alcohol -> mixed_drink : <- punch | data: 8762
+ABSORBE: part -> beverage -> alcohol -> beer : <- lager | data: 8546
+ABSORBE: part -> beverage -> alcohol -> beer : <- ale | data: 8553
+ABSORBE: good_person : <- benefactor | data: 8937
+ABSORBE: female : <- woman | data: 9919
+ABSORBE: male : <- man | data: 12971
+ABSORBE: communicator : <- announcer | data: 9113
+ABSORBE: entertainer : <- musician | data: 9599
+ABSORBE: unfortunate : <- sick_person | data: 9797
+ABSORBE: leader : <- deputy | data: 9292
+ABSORBE: leader : <- senator | data: 9784
+ABSORBE: expert : <- therapist | data: 9869
+ABSORBE: relative : <- child | data: 9230
+ABSORBE: creator : <- maker | data: 9543
+ABSORBE: capitalist : <- businessperson | data: 12591
+ABSORBE: capitalist : <- retailer | data: 9741
+ABSORBE: consumer : <- drinker | data: 9311
+ABSORBE: defender : <- lawman | data: 9512
+ABSORBE: animal -> domestic_animal : <- dog | data: 1382
+ABSORBE: animal -> domestic_animal : <- domestic_cat | data: 1566
+ABSORBE: animal -> invertebrate : <- worm | data: 1085
+ABSORBE: plant -> spermatophyte : <- cycad | data: 9943
+ABSORBE: plant -> vine : <- sweet_melon | data: 10791
+ABSORBE: plant -> vine : <- winter_squash | data: 10782
+ABSORBE: natural_object -> plant_organ -> seed : <- bean | data: 12098
+ABSORBE: natural_object -> plant_organ -> pome : <- apple | data: 8058
+ABSORBE: natural_object -> plant_organ -> pome : <- eating_apple | data: 8060
+ABSORBE: natural_object -> plant_organ -> pome : <- Delicious | data: 8062
+ABSORBE: weaponry : <- bomb | data: 2999
+ABSORBE: connection : <- telephone_line | data: 6915
+ABSORBE: connection : <- junction | data: 4910
+ABSORBE: connection : <- joint | data: 4894
+ABSORBE: connection : <- chain | data: 3392
+ABSORBE: medium : <- print_media | data: 7523
+ABSORBE: medium : <- telecommunication | data: 7533
+ABSORBE: medium : <- press | data: 7522
+ABSORBE: medium : <- telephone | data: 7534
+ABSORBE: medium : <- broadcasting | data: 7546
+ABSORBE: commodity -> appliance : <- home_appliance | data: 4736
+ABSORBE: commodity -> appliance : <- dryer | data: 4044
+ABSORBE: covering -> cloth_covering : <- bedclothes | data: 2870
+ABSORBE: covering -> cloth_covering : <- sleeve | data: 6458
+ABSORBE: covering -> footwear : <- shoe | data: 6366
+ABSORBE: covering -> footwear : <- boot | data: 3019
+ABSORBE: covering -> top : <- cap | data: 3272
+ABSORBE: covering -> floor_cover : <- rug | data: 6144
+ABSORBE: covering -> coating : <- paint | data: 5544
+ABSORBE: covering -> coating : <- coat_of_paint | data: 3559
+ABSORBE: establishment : <- place_of_business | data: 5734
+ABSORBE: establishment : <- mercantile_establishment | data: 5248
+ABSORBE: establishment : <- office | data: 5455
+ABSORBE: arch : <- round_arch | data: 6133
+ABSORBE: building_complex : <- plant | data: 5744
+ABSORBE: building_complex : <- factory | data: 4191
+ABSORBE: partition : <- wall | data: 7270
+ABSORBE: shelter : <- tent | data: 6936
+ABSORBE: shelter : <- canvas_tent | data: 3270
+ABSORBE: mound : <- rampart | data: 5973
+ABSORBE: defensive_structure : <- fortification | data: 4358
+ABSORBE: defensive_structure : <- stronghold | data: 6742
+ABSORBE: projection : <- brim | data: 3111
+ABSORBE: fabric -> piece_of_cloth : <- towel | data: 7055
+ABSORBE: decoration -> design : <- flag | data: 4292
+ABSORBE: creation -> publication : <- magazine | data: 7554
+ABSORBE: ware -> dish : <- bowl | data: 3045
+ABSORBE: liquid -> beverage -> alcohol -> liquor : <- gin | data: 8634
+ABSORBE: liquid -> beverage -> alcohol -> liquor : <- whiskey | data: 8646
+ABSORBE: liquid -> beverage -> alcohol -> mixed_drink : <- punch | data: 8762
+ABSORBE: liquid -> beverage -> alcohol -> beer : <- lager | data: 8546
+ABSORBE: liquid -> beverage -> alcohol -> beer : <- ale | data: 8553
+ABSORBE: foodstuff -> ingredient -> condiment -> sauce : <- spaghetti_sauce | data: 8336
+ABSORBE: foodstuff -> starches -> bread -> bun : <- sweet_roll | data: 7885
+ABSORBE: foodstuff -> starches -> bread -> quick_bread : <- cornbread | data: 7863
+ABSORBE: foodstuff -> starches -> bread -> quick_bread : <- muffin | data: 7871
+ABSORBE: worker -> employee : <- workman | data: 9922
+ABSORBE: adult -> professional : <- nurse | data: 9616
+ABSORBE: adult -> professional : <- doctor | data: 9301
+ABSORBE: adult -> professional : <- teacher | data: 9857
+ABSORBE: leader -> clergyman : <- priest | data: 9698
+ABSORBE: animal -> domestic_animal -> hunting_dog : <- spaniel | data: 1471
+ABSORBE: animal -> domestic_animal -> working_dog : <- watchdog | data: 1481
+ABSORBE: animal -> invertebrate -> arachnid : <- spider | data: 808
+ABSORBE: animal -> invertebrate -> crustacean : <- crab | data: 1140
+ABSORBE: animal -> invertebrate -> crustacean : <- lobster | data: 1148
+ABSORBE: animal -> invertebrate -> gastropod : <- snail | data: 1099
+ABSORBE: animal -> invertebrate -> bivalve : <- clam | data: 1118
+ABSORBE: animal -> vertebrate -> amphibian : <- salamander | data: 584
+ABSORBE: animal -> vertebrate -> reptile : <- snake | data: 716
+ABSORBE: animal -> vertebrate -> reptile : <- sea_turtle | data: 646
+ABSORBE: plant -> herb -> gramineous_plant : <- grass | data: 10718
+ABSORBE: natural_object -> plant_organ -> edible_fruit -> apple : <- eating_apple | data: 8060
+ABSORBE: natural_object -> plant_organ -> edible_fruit -> apple : <- Delicious | data: 8062
+ABSORBE: natural_object -> plant_organ -> edible_fruit -> citrus : <- orange | data: 8097
+ABSORBE: natural_object -> plant_organ -> edible_fruit -> citrus : <- mandarin | data: 8098
+ABSORBE: natural_object -> plant_organ -> edible_fruit -> citrus : <- sweet_orange | data: 8104
+ABSORBE: filter : <- strainer | data: 6727
+ABSORBE: alarm : <- horn | data: 4757
+ABSORBE: strengthener : <- brace | data: 3064
+ABSORBE: electronic_device : <- display | data: 3942
+ABSORBE: electronic_device : <- tube | data: 7134
+ABSORBE: explosive_device : <- bomb | data: 2999
+ABSORBE: memory_device : <- optical_disk | data: 5482
+ABSORBE: memory_device : <- recording | data: 6002
+ABSORBE: memory_device : <- compact_disk | data: 3614
+ABSORBE: memory_device : <- audio_CD | data: 2674
+ABSORBE: memory_device : <- CD-R | data: 3371
+ABSORBE: memory_device : <- CD-ROM | data: 3372
+ABSORBE: memory_device : <- magnetic_tape | data: 5148
+ABSORBE: memory_device : <- videotape | data: 7231
+ABSORBE: memory_device : <- memory | data: 5240
+ABSORBE: memory_device : <- magnetic_disk | data: 5144
+ABSORBE: memory_device : <- compact_disk | data: 3614
+ABSORBE: memory_device : <- video_recording | data: 7230
+ABSORBE: memory_device : <- videotape | data: 7232
+ABSORBE: memory_device : <- CD-ROM | data: 3372
+ABSORBE: optical_device : <- lens | data: 5027
+ABSORBE: optical_device : <- camera_lens | data: 3229
+ABSORBE: elastic_device : <- spring | data: 6605
+ABSORBE: acoustic_device : <- bell | data: 2891
+ABSORBE: signaling_device : <- bell | data: 2891
+ABSORBE: conductor : <- cable | data: 3209
+ABSORBE: conductor : <- cord | data: 3691
+ABSORBE: conductor : <- wire | data: 7401
+ABSORBE: holding_device : <- holder | data: 4733
+ABSORBE: holding_device : <- candelabrum | data: 3242
+ABSORBE: reflector : <- mirror | data: 5300
+ABSORBE: reflector : <- car_mirror | data: 3302
+ABSORBE: lifting_device : <- crane | data: 3745
+ABSORBE: implement -> bar : <- lever | data: 5034
+ABSORBE: implement -> stick : <- bat | data: 2829
+ABSORBE: implement -> sports_implement : <- racket | data: 5936
+ABSORBE: implement -> writing_implement : <- pen | data: 5631
+ABSORBE: implement -> utensil : <- kitchen_utensil | data: 4950
+ABSORBE: implement -> rod : <- pole | data: 5781
+ABSORBE: implement -> rod : <- fishing_rod | data: 4290
+ABSORBE: implement -> leather_strip : <- strap | data: 6729
+ABSORBE: container -> receptacle : <- tray | data: 7092
+ABSORBE: container -> case : <- baggage | data: 2730
+ABSORBE: container -> case : <- bag | data: 2728
+ABSORBE: container -> package : <- pack | data: 5528
+ABSORBE: container -> dish : <- bowl | data: 3045
+ABSORBE: toiletry -> cosmetic : <- makeup | data: 5163
+ABSORBE: conveyance -> public_transport : <- train | data: 7077
+ABSORBE: conveyance -> public_transport : <- bus | data: 3176
+ABSORBE: conveyance -> public_transport : <- passenger_train | data: 5603
+ABSORBE: equipment -> photographic_equipment : <- camera | data: 3228
+ABSORBE: equipment -> gear : <- kit | data: 4945
+ABSORBE: equipment -> gear : <- stable_gear | data: 6630
+ABSORBE: equipment -> rescue_equipment : <- life_preserver | data: 5044
+ABSORBE: equipment -> satellite : <- spacecraft | data: 6542
+ABSORBE: system -> reproducer : <- stereo | data: 6682
+ABSORBE: commodity -> clothing -> attire : <- hairpiece | data: 4596
+ABSORBE: commodity -> clothing -> attire : <- disguise | data: 3931
+ABSORBE: commodity -> clothing -> attire : <- fancy_dress | data: 4203
+ABSORBE: commodity -> clothing -> attire : <- mask | data: 5198
+ABSORBE: commodity -> clothing -> accessory : <- belt | data: 2901
+ABSORBE: commodity -> clothing -> gown : <- vestment | data: 7219
+ABSORBE: commodity -> clothing -> hosiery : <- sock | data: 6514
+ABSORBE: commodity -> clothing -> hosiery : <- stocking | data: 6701
+ABSORBE: commodity -> clothing -> hosiery : <- knee-high | data: 4955
+ABSORBE: commodity -> appliance -> kitchen_appliance : <- oven | data: 5508
+ABSORBE: commodity -> appliance -> kitchen_appliance : <- coffee_maker | data: 3574
+ABSORBE: commodity -> appliance -> kitchen_appliance : <- stove | data: 6722
+ABSORBE: commodity -> appliance -> white_goods : <- clothes_dryer | data: 3536
+ABSORBE: commodity -> appliance -> white_goods : <- refrigerator | data: 6025
+ABSORBE: commodity -> appliance -> white_goods : <- electric_refrigerator | data: 4106
+ABSORBE: covering -> clothing -> attire : <- hairpiece | data: 4596
+ABSORBE: covering -> clothing -> attire : <- disguise | data: 3931
+ABSORBE: covering -> clothing -> attire : <- fancy_dress | data: 4203
+ABSORBE: covering -> clothing -> attire : <- mask | data: 5198
+ABSORBE: covering -> clothing -> accessory : <- belt | data: 2901
+ABSORBE: covering -> clothing -> gown : <- vestment | data: 7219
+ABSORBE: covering -> clothing -> hosiery : <- sock | data: 6514
+ABSORBE: covering -> clothing -> hosiery : <- stocking | data: 6701
+ABSORBE: covering -> clothing -> hosiery : <- knee-high | data: 4955
+ABSORBE: covering -> protective_covering -> armor : <- body_armor | data: 2986
+ABSORBE: covering -> protective_covering -> roof : <- dome | data: 3966
+ABSORBE: covering -> protective_covering -> roof : <- vault | data: 7200
+ABSORBE: covering -> protective_covering -> blind : <- curtain | data: 3812
+ABSORBE: covering -> protective_covering -> blind : <- window_blind | data: 7380
+ABSORBE: housing -> living_quarters : <- accommodation | data: 2510
+ABSORBE: establishment -> marketplace : <- open-air_market | data: 5471
+ABSORBE: establishment -> marketplace : <- grocery_store | data: 4560
+ABSORBE: building -> outbuilding : <- shed | data: 6338
+ABSORBE: building -> restaurant : <- cafe | data: 3212
+ABSORBE: building -> place_of_worship : <- church | data: 3465
+ABSORBE: obstruction -> barrier : <- fence | data: 4225
+ABSORBE: animal -> invertebrate -> insect -> hymenopterous_insect : <- ant | data: 1747
+ABSORBE: animal -> vertebrate -> bird -> oscine : <- corvine_bird | data: 441
+ABSORBE: animal -> vertebrate -> reptile -> colubrid_snake : <- rat_snake | data: 725
+ABSORBE: animal -> vertebrate -> mammal -> aquatic_mammal : <- sea_lion | data: 1368
+ABSORBE: animal -> vertebrate -> mammal -> aquatic_mammal : <- rorqual | data: 1337
+ABSORBE: animal -> vertebrate -> mammal -> ungulate : <- odd-toed_ungulate | data: 1977
+ABSORBE: animal -> vertebrate -> mammal -> ungulate : <- equine | data: 1978
+ABSORBE: animal -> vertebrate -> mammal -> ungulate : <- swine | data: 2058
+ABSORBE: animal -> vertebrate -> mammal -> ungulate : <- horse | data: 1979
+ABSORBE: animal -> vertebrate -> mammal -> ungulate : <- zebra | data: 2048
+ABSORBE: animal -> vertebrate -> mammal -> primate : <- monkey | data: 2256
+ABSORBE: animal -> vertebrate -> mammal -> primate : <- homo | data: 2237
+ABSORBE: machine -> computer : <- personal_computer | data: 5658
+ABSORBE: machine -> computer : <- portable_computer | data: 5810
+ABSORBE: machine -> power_tool : <- power_saw | data: 5842
+ABSORBE: machine -> printer : <- wire_matrix_printer | data: 7404
+ABSORBE: machine -> engine : <- generator | data: 4483
+ABSORBE: machine -> engine : <- jet_engine | data: 4884
+ABSORBE: machine -> engine : <- rocket | data: 6087
+ABSORBE: mechanism -> control : <- switch | data: 6826
+ABSORBE: mechanism -> control : <- push_button | data: 5910
+ABSORBE: mechanism -> control : <- faucet | data: 4215
+ABSORBE: mechanism -> rotating_mechanism : <- blade | data: 2953
+ABSORBE: mechanism -> rotating_mechanism : <- disk | data: 3938
+ABSORBE: instrument -> scientific_instrument : <- accelerator | data: 2506
+ABSORBE: instrument -> scientific_instrument : <- magnifier | data: 5150
+ABSORBE: instrument -> scientific_instrument : <- telescope | data: 6921
+ABSORBE: instrument -> scientific_instrument : <- microscope | data: 5265
+ABSORBE: instrument -> scientific_instrument : <- astronomical_telescope | data: 2660
+ABSORBE: instrument -> scientific_instrument : <- light_microscope | data: 5054
+ABSORBE: instrument -> scientific_instrument : <- optical_telescope | data: 5484
+ABSORBE: instrument -> scientific_instrument : <- reflecting_telescope | data: 6016
+ABSORBE: instrument -> optical_instrument : <- projector | data: 5869
+ABSORBE: instrument -> optical_instrument : <- spectacles | data: 6563
+ABSORBE: musical_instrument -> wind_instrument : <- brass | data: 3077
+ABSORBE: musical_instrument -> keyboard_instrument : <- piano | data: 5677
+ABSORBE: musical_instrument -> keyboard_instrument : <- grand_piano | data: 4537
+ABSORBE: musical_instrument -> percussion_instrument : <- piano | data: 5677
+ABSORBE: musical_instrument -> percussion_instrument : <- drum | data: 4040
+ABSORBE: musical_instrument -> percussion_instrument : <- grand_piano | data: 4537
+ABSORBE: support -> seat : <- saddle | data: 6162
+ABSORBE: support -> structural_member : <- beam | data: 2862
+ABSORBE: support -> rack : <- tripod | data: 7110
+ABSORBE: electrical_device -> transducer : <- loudspeaker | data: 5108
+ABSORBE: electrical_device -> transducer : <- microphone | data: 5263
+ABSORBE: electrical_device -> transducer : <- earphone | data: 4073
+ABSORBE: electrical_device -> circuit : <- computer_circuit | data: 3627
+ABSORBE: source_of_illumination -> lamp : <- electric_lamp | data: 4099
+ABSORBE: source_of_illumination -> lamp : <- lantern | data: 4994
+ABSORBE: implement -> tool -> cutting_implement : <- cutter | data: 3816
+ABSORBE: implement -> tool -> cutting_implement : <- blade | data: 2952
+ABSORBE: implement -> tool -> cutting_implement : <- ax | data: 2699
+ABSORBE: implement -> tool -> cutting_implement : <- knife | data: 4958
+ABSORBE: implement -> tool -> cutting_implement : <- razor | data: 5983
+ABSORBE: implement -> tool -> power_tool : <- power_saw | data: 5842
+ABSORBE: implement -> utensil -> cooking_utensil : <- pot | data: 5825
+ABSORBE: implement -> utensil -> cooking_utensil : <- pan | data: 5560
+ABSORBE: container -> wheeled_vehicle -> self-propelled_vehicle : <- motor_vehicle | data: 5354
+ABSORBE: container -> wheeled_vehicle -> self-propelled_vehicle : <- recreational_vehicle | data: 6006
+ABSORBE: container -> wheeled_vehicle -> car : <- freight_car | data: 4379
+ABSORBE: container -> wheeled_vehicle -> car : <- passenger_car | data: 5601
+ABSORBE: container -> vessel -> tank : <- reservoir | data: 6042
+ABSORBE: container -> vessel -> tank : <- cistern | data: 3484
+ABSORBE: container -> vessel -> bottle : <- flask | data: 4305
+ABSORBE: container -> vessel -> bottle : <- vacuum_flask | data: 7192
+ABSORBE: container -> vessel -> drinking_vessel : <- mug | data: 5371
+ABSORBE: container -> vessel -> pot : <- coffeepot | data: 3577
+ABSORBE: container -> vessel -> pot : <- urn | data: 7186
+ABSORBE: conveyance -> vehicle -> craft : <- aircraft | data: 2540
+ABSORBE: conveyance -> vehicle -> craft : <- spacecraft | data: 6542
+ABSORBE: conveyance -> vehicle -> military_vehicle : <- warship | data: 7282
+ABSORBE: equipment -> electronic_equipment -> set : <- receiver | data: 5993
+ABSORBE: equipment -> electronic_equipment -> reproducer : <- stereo | data: 6682
+ABSORBE: equipment -> apparatus -> burner : <- gas_burner | data: 4446
+ABSORBE: equipment -> sports_equipment -> golf_equipment : <- golf_club | data: 4517
+ABSORBE: equipment -> sports_equipment -> golf_equipment : <- iron | data: 4858
+ABSORBE: commodity -> clothing -> garment -> undergarment : <- underpants | data: 7175
+ABSORBE: commodity -> clothing -> garment -> undergarment : <- underwear | data: 7176
+ABSORBE: commodity -> clothing -> garment -> neckwear : <- necktie | data: 5407
+ABSORBE: commodity -> clothing -> garment -> overgarment : <- coat | data: 3552
+ABSORBE: commodity -> clothing -> garment -> overgarment : <- cloak | data: 3517
+ABSORBE: commodity -> clothing -> garment -> suit : <- business_suit | data: 3179
+ABSORBE: commodity -> clothing -> garment -> scarf : <- headscarf | data: 4678
+ABSORBE: commodity -> clothing -> headdress -> cap : <- skullcap | data: 6448
+ABSORBE: commodity -> clothing -> headdress -> hat : <- millinery | data: 5279
+ABSORBE: covering -> clothing -> garment -> undergarment : <- underpants | data: 7175
+ABSORBE: covering -> clothing -> garment -> undergarment : <- underwear | data: 7176
+ABSORBE: covering -> clothing -> garment -> neckwear : <- necktie | data: 5407
+ABSORBE: covering -> clothing -> garment -> overgarment : <- coat | data: 3552
+ABSORBE: covering -> clothing -> garment -> overgarment : <- cloak | data: 3517
+ABSORBE: covering -> clothing -> garment -> suit : <- business_suit | data: 3179
+ABSORBE: covering -> clothing -> garment -> scarf : <- headscarf | data: 4678
+ABSORBE: covering -> clothing -> headdress -> cap : <- skullcap | data: 6448
+ABSORBE: covering -> clothing -> headdress -> hat : <- millinery | data: 5279
+ABSORBE: area -> enclosure -> chamber : <- burial_chamber | data: 3170
+ABSORBE: animal -> vertebrate -> mammal -> carnivore -> feline : <- domestic_cat | data: 1566
+ABSORBE: plant -> woody_plant -> tree -> angiospermous_tree -> fruit_tree : <- apple_tree | data: 11401
+ABSORBE: plant -> woody_plant -> tree -> angiospermous_tree -> fruit_tree : <- citrus | data: 11512
+ABSORBE: mechanism -> mechanical_device -> machine : <- wheel | data: 7339
+ABSORBE: instrument -> measuring_instrument -> timepiece : <- clock | data: 3522
+ABSORBE: instrument -> measuring_instrument -> timepiece : <- watch | data: 7292
+ABSORBE: instrument -> measuring_instrument -> timepiece : <- timer | data: 6991
+ABSORBE: instrument -> measuring_instrument -> scale : <- balance | data: 2741
+ABSORBE: instrument -> weapon -> gun : <- air_gun | data: 2548
+ABSORBE: instrument -> weapon -> gun : <- firearm | data: 4268
+ABSORBE: instrument -> weapon -> gun : <- pistol | data: 5726
+ABSORBE: instrument -> weapon -> gun : <- semiautomatic_pistol | data: 6290
+ABSORBE: instrument -> weapon -> gun : <- rifle | data: 6069
+ABSORBE: instrument -> weapon -> gun : <- automatic_firearm | data: 2684
+ABSORBE: instrument -> weapon -> gun : <- automatic_pistol | data: 2685
+ABSORBE: instrument -> weapon -> gun : <- assault_rifle | data: 2655
+ABSORBE: instrument -> weapon -> gun : <- submachine_gun | data: 6756
+ABSORBE: instrument -> weapon -> sword : <- fencing_sword | data: 4227
+ABSORBE: musical_instrument -> stringed_instrument -> piano : <- grand_piano | data: 4537
+ABSORBE: container -> wheeled_vehicle -> self-propelled_vehicle -> truck : <- van | data: 7195
+ABSORBE: conveyance -> vehicle -> craft -> heavier-than-air_craft : <- airplane | data: 2551
+ABSORBE: conveyance -> vehicle -> craft -> heavier-than-air_craft : <- stealth_bomber | data: 6660
+ABSORBE: conveyance -> vehicle -> craft -> heavier-than-air_craft : <- airliner | data: 2550
+ABSORBE: conveyance -> vehicle -> craft -> heavier-than-air_craft : <- jet | data: 4883
+ABSORBE: conveyance -> vehicle -> craft -> ship : <- warship | data: 7282
+ABSORBE: conveyance -> vehicle -> craft -> boat : <- small_boat | data: 6482
+ABSORBE: conveyance -> vehicle -> craft -> boat : <- motorboat | data: 5350
+ABSORBE: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle : <- motor_vehicle | data: 5354
+ABSORBE: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle : <- recreational_vehicle | data: 6006
+ABSORBE: conveyance -> vehicle -> wheeled_vehicle -> car : <- freight_car | data: 4379
+ABSORBE: conveyance -> vehicle -> wheeled_vehicle -> car : <- passenger_car | data: 5601
+ABSORBE: furnishing -> furniture -> table -> counter : <- bar | data: 2775
+ABSORBE: furnishing -> furniture -> seat -> chair : <- armchair | data: 2635
+ABSORBE: furnishing -> furniture -> seat -> sofa : <- convertible | data: 3672
+ABSORBE: hunting_dog : <- spaniel | data: 1471
+ABSORBE: working_dog : <- watchdog | data: 1481
+ABSORBE: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> truck : <- van | data: 7195
+TRIM: part -> beverage -> alcohol -> wine -> red_wine : <- Beaujolais | data: 8572
+TRIM: part -> beverage -> alcohol -> wine -> red_wine : <- Medoc | data: 8573
+TRIM: part -> beverage -> alcohol -> wine -> red_wine : <- Pinot_noir | data: 8578
+TRIM: part -> beverage -> alcohol -> wine -> red_wine : <- claret | data: 8581
+TRIM: part -> beverage -> alcohol -> wine -> red_wine : <- Chianti | data: 8582
+TRIM: part -> beverage -> alcohol -> wine -> red_wine : <- Cabernet | data: 8583
+TRIM: part -> beverage -> alcohol -> wine -> red_wine : <- Merlot | data: 8584
+TRIM: part -> beverage -> alcohol -> wine -> red_wine : <- Rioja | data: 8597
+TRIM: part -> beverage -> alcohol -> wine -> red_wine : <- zinfandel | data: 8600
+TRIM: part -> beverage -> alcohol -> wine -> white_wine : <- Canary_wine | data: 8574
+TRIM: part -> beverage -> alcohol -> wine -> white_wine : <- Chablis | data: 8575
+TRIM: part -> beverage -> alcohol -> wine -> white_wine : <- Montrachet | data: 8576
+TRIM: part -> beverage -> alcohol -> wine -> white_wine : <- Sauvignon_blanc | data: 8585
+TRIM: part -> beverage -> alcohol -> wine -> white_wine : <- Sauterne | data: 8601
+TRIM: part -> beverage -> alcohol -> wine -> white_wine : <- Yquem | data: 8610
+TRIM: part -> beverage -> alcohol -> wine -> Burgundy : <- Beaujolais | data: 8572
+TRIM: part -> beverage -> alcohol -> wine -> Burgundy : <- Chablis | data: 8575
+TRIM: part -> beverage -> alcohol -> wine -> Burgundy : <- Montrachet | data: 8576
+TRIM: part -> beverage -> alcohol -> wine -> Bordeaux : <- Medoc | data: 8573
+TRIM: part -> beverage -> alcohol -> wine -> Bordeaux : <- claret | data: 8581
+TRIM: part -> beverage -> alcohol -> wine -> fortified_wine : <- Madeira | data: 8614
+TRIM: part -> beverage -> alcohol -> wine -> fortified_wine : <- port | data: 8615
+TRIM: part -> beverage -> alcohol -> wine -> fortified_wine : <- sherry | data: 8616
+TRIM: part -> beverage -> alcohol -> wine -> fortified_wine : <- muscat | data: 8618
+TRIM: liquid -> beverage -> alcohol -> wine -> red_wine : <- Beaujolais | data: 8572
+TRIM: liquid -> beverage -> alcohol -> wine -> red_wine : <- Medoc | data: 8573
+TRIM: liquid -> beverage -> alcohol -> wine -> red_wine : <- Pinot_noir | data: 8578
+TRIM: liquid -> beverage -> alcohol -> wine -> red_wine : <- claret | data: 8581
+TRIM: liquid -> beverage -> alcohol -> wine -> red_wine : <- Chianti | data: 8582
+TRIM: liquid -> beverage -> alcohol -> wine -> red_wine : <- Cabernet | data: 8583
+TRIM: liquid -> beverage -> alcohol -> wine -> red_wine : <- Merlot | data: 8584
+TRIM: liquid -> beverage -> alcohol -> wine -> red_wine : <- Rioja | data: 8597
+TRIM: liquid -> beverage -> alcohol -> wine -> red_wine : <- zinfandel | data: 8600
+TRIM: liquid -> beverage -> alcohol -> wine -> white_wine : <- Canary_wine | data: 8574
+TRIM: liquid -> beverage -> alcohol -> wine -> white_wine : <- Chablis | data: 8575
+TRIM: liquid -> beverage -> alcohol -> wine -> white_wine : <- Montrachet | data: 8576
+TRIM: liquid -> beverage -> alcohol -> wine -> white_wine : <- Sauvignon_blanc | data: 8585
+TRIM: liquid -> beverage -> alcohol -> wine -> white_wine : <- Sauterne | data: 8601
+TRIM: liquid -> beverage -> alcohol -> wine -> white_wine : <- Yquem | data: 8610
+TRIM: liquid -> beverage -> alcohol -> wine -> Burgundy : <- Beaujolais | data: 8572
+TRIM: liquid -> beverage -> alcohol -> wine -> Burgundy : <- Chablis | data: 8575
+TRIM: liquid -> beverage -> alcohol -> wine -> Burgundy : <- Montrachet | data: 8576
+TRIM: liquid -> beverage -> alcohol -> wine -> Bordeaux : <- Medoc | data: 8573
+TRIM: liquid -> beverage -> alcohol -> wine -> Bordeaux : <- claret | data: 8581
+TRIM: liquid -> beverage -> alcohol -> wine -> fortified_wine : <- Madeira | data: 8614
+TRIM: liquid -> beverage -> alcohol -> wine -> fortified_wine : <- port | data: 8615
+TRIM: liquid -> beverage -> alcohol -> wine -> fortified_wine : <- sherry | data: 8616
+TRIM: liquid -> beverage -> alcohol -> wine -> fortified_wine : <- muscat | data: 8618
+TRIM: animal -> vertebrate -> mammal -> carnivore -> feline : <- leopard | data: 1601
+TRIM: animal -> vertebrate -> mammal -> carnivore -> feline : <- snow_leopard | data: 1602
+TRIM: animal -> vertebrate -> mammal -> carnivore -> feline : <- kitty | data: 1567
+TRIM: animal -> vertebrate -> mammal -> carnivore -> feline : <- mouser | data: 1568
+TRIM: animal -> vertebrate -> mammal -> carnivore -> feline : <- tortoiseshell | data: 1576
+TRIM: animal -> vertebrate -> mammal -> carnivore -> feline : <- Siamese_cat | data: 1579
+TRIM: animal -> vertebrate -> mammal -> carnivore -> feline : <- Egyptian_cat | data: 1581
+TRIM: animal -> vertebrate -> mammal -> carnivore -> feline : <- Manx | data: 1583
+TRIM: animal -> vertebrate -> mammal -> carnivore -> musteline_mammal : <- weasel | data: 2201
+TRIM: animal -> vertebrate -> mammal -> carnivore -> musteline_mammal : <- polecat | data: 2203
+TRIM: animal -> vertebrate -> mammal -> carnivore -> musteline_mammal : <- sea_otter | data: 2208
+TRIM: animal -> vertebrate -> mammal -> carnivore -> musteline_mammal : <- river_otter | data: 2206
+TRIM: animal -> vertebrate -> mammal -> carnivore -> procyonid : <- raccoon | data: 2301
+TRIM: animal -> vertebrate -> mammal -> carnivore -> procyonid : <- coati | data: 2305
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- pooch | data: 1383
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- cur | data: 1384
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- lapdog | data: 1385
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- toy_dog | data: 1386
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- toy_dog -> Chihuahua | data: 1387
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- toy_dog -> Maltese_dog | data: 1389
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- toy_dog -> Shih-Tzu | data: 1391
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- hunting_dog | data: -1
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- hunting_dog -> dachshund | data: 1407
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- hunting_dog -> Afghan_hound | data: 1401
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- hunting_dog -> basset | data: 1402
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- hunting_dog -> beagle | data: 1403
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- hunting_dog -> coonhound | data: 1406
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- hunting_dog -> redbone | data: 1410
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- hunting_dog -> Weimaraner | data: 1422
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- hunting_dog -> Italian_greyhound | data: 1415
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- hunting_dog -> Yorkshire_terrier | data: 1433
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- hunting_dog -> rat_terrier | data: 1434
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- hunting_dog -> Airedale | data: 1439
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- hunting_dog -> Scotch_terrier | data: 1448
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- hunting_dog -> West_Highland_white_terrier | data: 1453
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- hunting_dog -> Lhasa | data: 1454
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- hunting_dog -> Chesapeake_Bay_retriever | data: 1463
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- hunting_dog -> English_setter | data: 1468
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- hunting_dog -> water_spaniel | data: 1479
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- hunting_dog -> English_springer | data: 1475
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- working_dog | data: -1
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- working_dog -> police_dog | data: 1499
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- working_dog -> bulldog | data: 1511
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- working_dog -> guide_dog | data: 1513
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- working_dog -> Bouvier_des_Flandres | data: 1496
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- working_dog -> schipperke | data: 1484
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- working_dog -> Doberman | data: 1501
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- working_dog -> miniature_pinscher | data: 1502
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- dalmatian | data: 1519
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- pug | data: 1522
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- Newfoundland | data: 1524
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- spitz | data: -1
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- spitz -> Samoyed | data: 1527
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- spitz -> Pomeranian | data: 1528
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- griffon | data: 1531
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- poodle | data: 1535
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- poodle -> toy_poodle | data: 1536
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- poodle -> standard_poodle | data: 1538
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- poodle -> large_poodle | data: 1539
+TRIM: animal -> vertebrate -> mammal -> carnivore -> dog : <- Pembroke | data: 1533
+TRIM: animal -> vertebrate -> fish -> teleost_fish -> cypriniform_fish : <- electric_eel | data: 220
+TRIM: animal -> vertebrate -> fish -> teleost_fish -> cypriniform_fish : <- topminnow | data: 225
+TRIM: animal -> vertebrate -> fish -> teleost_fish -> eel : <- tuna | data: 2329
+TRIM: animal -> vertebrate -> fish -> teleost_fish -> eel : <- moray | data: 2330
+TRIM: animal -> vertebrate -> fish -> teleost_fish -> clupeid_fish : <- sardine | data: 2337
+TRIM: animal -> vertebrate -> fish -> teleost_fish -> clupeid_fish : <- pilchard | data: 2338
+TRIM: animal -> vertebrate -> fish -> teleost_fish -> trout : <- brown_trout | data: 2348
+TRIM: animal -> vertebrate -> fish -> teleost_fish -> trout : <- rainbow_trout | data: 2349
+TRIM: animal -> vertebrate -> fish -> teleost_fish -> percoid_fish : <- bass | data: 2386
+TRIM: animal -> vertebrate -> fish -> teleost_fish -> percoid_fish : <- cichlid | data: 2414
+TRIM: animal -> vertebrate -> fish -> teleost_fish -> percoid_fish : <- snapper | data: 2415
+TRIM: animal -> vertebrate -> fish -> teleost_fish -> percoid_fish : <- sparid | data: 2417
+TRIM: animal -> vertebrate -> fish -> teleost_fish -> percoid_fish : <- sea_bream | data: 2418
+TRIM: animal -> vertebrate -> fish -> teleost_fish -> percoid_fish : <- butterfly_fish | data: 2429
+TRIM: animal -> vertebrate -> fish -> teleost_fish -> percoid_fish : <- northern_pike | data: 2374
+TRIM: animal -> vertebrate -> fish -> teleost_fish -> percoid_fish : <- anemone_fish | data: 2434
+TRIM: animal -> vertebrate -> fish -> teleost_fish -> percoid_fish : <- largemouth | data: 2385
+TRIM: animal -> vertebrate -> fish -> teleost_fish -> percoid_fish : <- bluefin | data: 2454
+TRIM: animal -> vertebrate -> fish -> teleost_fish -> plectognath : <- triggerfish | data: 2484
+TRIM: animal -> vertebrate -> fish -> teleost_fish -> plectognath : <- ocean_sunfish | data: 2489
+TRIM: plant -> woody_plant -> tree -> gymnospermous_tree -> pine : <- stone_pine | data: 9959
+TRIM: plant -> woody_plant -> tree -> gymnospermous_tree -> pine : <- yellow_pine | data: 9969
+TRIM: plant -> woody_plant -> tree -> gymnospermous_tree -> pine : <- loblolly_pine | data: 9972
+TRIM: plant -> woody_plant -> tree -> gymnospermous_tree -> pine : <- Scotch_pine | data: 9976
+TRIM: plant -> woody_plant -> tree -> gymnospermous_tree -> pine : <- Japanese_black_pine | data: 9983
+TRIM: plant -> woody_plant -> tree -> gymnospermous_tree -> pine : <- Torrey_pine | data: 9984
+TRIM: plant -> woody_plant -> tree -> gymnospermous_tree -> cedar : <- cedar_of_Lebanon | data: 10002
+TRIM: plant -> woody_plant -> tree -> gymnospermous_tree -> cedar : <- deodar | data: 10003
+TRIM: plant -> woody_plant -> tree -> gymnospermous_tree -> cedar : <- incense_cedar | data: 10027
+TRIM: plant -> woody_plant -> tree -> gymnospermous_tree -> cedar : <- Oregon_cedar | data: 10029
+TRIM: plant -> woody_plant -> tree -> gymnospermous_tree -> cedar : <- Japanese_cedar | data: 10031
+TRIM: plant -> woody_plant -> tree -> gymnospermous_tree -> cedar : <- pahautea | data: 10034
+TRIM: plant -> woody_plant -> tree -> gymnospermous_tree -> spruce : <- black_spruce | data: 10010
+TRIM: plant -> woody_plant -> tree -> gymnospermous_tree -> spruce : <- Sitka_spruce | data: 10011
+TRIM: plant -> woody_plant -> tree -> gymnospermous_tree -> cypress : <- Arizona_cypress | data: 10023
+TRIM: plant -> woody_plant -> tree -> gymnospermous_tree -> cypress : <- Monterey_cypress | data: 10024
+TRIM: plant -> woody_plant -> tree -> gymnospermous_tree -> cypress : <- Italian_cypress | data: 10026
+TRIM: plant -> woody_plant -> tree -> gymnospermous_tree -> araucaria : <- monkey_puzzle | data: 10042
+TRIM: plant -> woody_plant -> tree -> gymnospermous_tree -> araucaria : <- bunya_bunya | data: 10045
+TRIM: plant -> woody_plant -> tree -> angiospermous_tree -> fruit_tree : <- custard_apple | data: 10090
+TRIM: plant -> woody_plant -> tree -> angiospermous_tree -> fruit_tree : <- avocado | data: 10107
+TRIM: plant -> woody_plant -> tree -> angiospermous_tree -> fruit_tree : <- durian | data: 10830
+TRIM: plant -> woody_plant -> tree -> angiospermous_tree -> fruit_tree : <- mulberry | data: 11120
+TRIM: plant -> woody_plant -> tree -> angiospermous_tree -> fruit_tree : <- peach | data: 11429
+TRIM: plant -> woody_plant -> tree -> angiospermous_tree -> fruit_tree : <- persimmon | data: 11623
+TRIM: plant -> woody_plant -> tree -> angiospermous_tree -> fruit_tree : <- wild_plum | data: 11410
+TRIM: plant -> woody_plant -> tree -> angiospermous_tree -> fruit_tree : <- fuji | data: 11426
+TRIM: plant -> woody_plant -> tree -> angiospermous_tree -> fruit_tree : <- apple | data: 11402
+TRIM: plant -> woody_plant -> tree -> angiospermous_tree -> fruit_tree : <- wild_apple | data: 11403
+TRIM: plant -> woody_plant -> tree -> angiospermous_tree -> fruit_tree : <- pomelo | data: 11516
+TRIM: plant -> woody_plant -> tree -> angiospermous_tree -> fruit_tree : <- grapefruit | data: 11518
+TRIM: plant -> woody_plant -> tree -> angiospermous_tree -> fruit_tree : <- lemon | data: 11526
+TRIM: plant -> woody_plant -> tree -> angiospermous_tree -> fruit_tree : <- kumquat | data: 11530
+TRIM: plant -> woody_plant -> tree -> angiospermous_tree -> fruit_tree : <- sour_orange | data: 11514
+TRIM: plant -> woody_plant -> tree -> angiospermous_tree -> fruit_tree : <- clementine | data: 11521
+TRIM: plant -> woody_plant -> tree -> angiospermous_tree -> laurel : <- true_laurel | data: 10104
+TRIM: plant -> woody_plant -> tree -> angiospermous_tree -> laurel : <- camphor_tree | data: 10105
+TRIM: plant -> woody_plant -> tree -> angiospermous_tree -> magnolia : <- southern_magnolia | data: 10113
+TRIM: plant -> woody_plant -> tree -> angiospermous_tree -> magnolia : <- umbrella_tree | data: 10114
+TRIM: plant -> woody_plant -> tree -> angiospermous_tree -> mountain_ash : <- rowan | data: 11450
+TRIM: plant -> woody_plant -> tree -> angiospermous_tree -> mountain_ash : <- service_tree | data: 11453
+TRIM: plant -> woody_plant -> tree -> angiospermous_tree -> maple : <- box_elder | data: 11599
+TRIM: plant -> woody_plant -> tree -> angiospermous_tree -> maple : <- Japanese_maple | data: 11600
+TRIM: commodity -> clothing -> garment -> overgarment -> jacket : <- bomber_jacket | data: 3001
+TRIM: commodity -> clothing -> garment -> overgarment -> jacket : <- donkey_jacket | data: 3970
+TRIM: commodity -> clothing -> garment -> overgarment -> jacket : <- lumberjack | data: 5122
+TRIM: commodity -> clothing -> garment -> overgarment -> jacket : <- parka | data: 5590
+TRIM: commodity -> clothing -> garment -> overgarment -> jacket : <- pea_jacket | data: 5620
+TRIM: commodity -> clothing -> garment -> overgarment -> jacket : <- swallow-tailed_coat | data: 6812
+TRIM: commodity -> clothing -> garment -> overgarment -> fur_coat : <- mink | data: 5297
+TRIM: commodity -> clothing -> garment -> overgarment -> fur_coat : <- sable_coat | data: 6155
+TRIM: covering -> clothing -> garment -> overgarment -> jacket : <- bomber_jacket | data: 3001
+TRIM: covering -> clothing -> garment -> overgarment -> jacket : <- donkey_jacket | data: 3970
+TRIM: covering -> clothing -> garment -> overgarment -> jacket : <- lumberjack | data: 5122
+TRIM: covering -> clothing -> garment -> overgarment -> jacket : <- parka | data: 5590
+TRIM: covering -> clothing -> garment -> overgarment -> jacket : <- pea_jacket | data: 5620
+TRIM: covering -> clothing -> garment -> overgarment -> jacket : <- swallow-tailed_coat | data: 6812
+TRIM: covering -> clothing -> garment -> overgarment -> fur_coat : <- mink | data: 5297
+TRIM: covering -> clothing -> garment -> overgarment -> fur_coat : <- sable_coat | data: 6155
+TRIM: conveyance -> vehicle -> craft -> boat -> canoe : <- dugout_canoe | data: 4051
+TRIM: conveyance -> vehicle -> craft -> boat -> canoe : <- kayak | data: 4916
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> car : <- ambulance | data: 2574
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> car : <- beach_wagon | data: 2857
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> car : <- cab | data: 3196
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> car : <- compact | data: 3613
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> car : <- convertible | data: 3671
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> car : <- coupe | data: 3725
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> car : <- cruiser | data: 3787
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> car : <- electric | data: 4089
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> car : <- gas_guzzler | data: 4445
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> car : <- hatchback | data: 4657
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> car : <- limousine | data: 5059
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> car : <- loaner | data: 5077
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> car : <- minicar | data: 5292
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> car : <- minivan | data: 5296
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> car : <- pace_car | data: 5525
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> car : <- sedan | data: 6281
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> car : <- sports_car | data: 6596
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> car : <- sport_utility | data: 6600
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> car : <- subcompact | data: 6755
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> car : <- used-car | data: 7187
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> car : <- stock_car | data: 6699
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> truck : <- dump_truck | data: 4056
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> truck : <- fire_engine | data: 4273
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> truck : <- garbage_truck | data: 4434
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> truck : <- lorry | data: 5106
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> truck : <- pickup | data: 5684
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> truck : <- tow_truck | data: 7062
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> truck : <- trailer_truck | data: 7076
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> truck : <- bookmobile | data: 3012
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> truck : <- delivery_truck | data: 3856
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> truck : <- milk_float | data: 5275
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> truck : <- moving_van | data: 5368
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> truck : <- police_van | data: 5784
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> truck : <- minivan | data: 5296
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> motorcycle : <- minibike | data: 5290
+TRIM: conveyance -> vehicle -> wheeled_vehicle -> self-propelled_vehicle -> motorcycle : <- trail_bike | data: 7073

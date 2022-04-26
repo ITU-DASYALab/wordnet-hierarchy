@@ -3,7 +3,7 @@ import json
 
 # Load the distinct wordnet definitions
 wnd = []
-with open('wn_distinct_t6.json', 'r') as f:
+with open('spotify/wn_distinct_t25.json', 'r') as f:
     wnd = json.load(f)
 
 # Get hierarchy
@@ -28,5 +28,5 @@ for idx,h in enumerate(hierarchy):
         print('FAILED', idx)
 
 # Store the hierarchy
-with open('lsc_wn_hierarchy_t6.json','w') as f:
+with open('spotify/wn_hierarchy_t25.json','w') as f:
     json.dump(hierarchy,f)
