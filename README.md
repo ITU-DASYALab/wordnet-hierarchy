@@ -30,7 +30,7 @@ Encapsulates the concept of a node in the tree.
 
 ## py/makeTree.py
 
-This file creates a tree structure using the output file from makeHierarchy.py and the distinct feature file. It can take a file to remove specific nodes from the tree, and a number that determines how many levels from the root to cull, default being none.
+This file creates a tree structure using the output file from makeHierarchy.py and the distinct feature file.
 
 The file encapsulates the compression run of the initial json tree and keeps track of statistics and metadata for plotting throughout the compression process.
 
